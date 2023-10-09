@@ -23,7 +23,7 @@
 <meta name="author" content="Lara Kobilke, IfKW, Ludwig-Maximilians-Universität München" />
 
 
-<meta name="date" content="2023-10-05" />
+<meta name="date" content="2023-10-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -463,17 +463,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>have repeated the most important functions of <code>dplyr</code> and <code>ggplot2</code></li>
 </ul>
 <p>In this exercise, we will work with the <code>mtcars</code> data that comes pre-installed with <code>dplyr</code>.</p>
-<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb377-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb377-2"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb377-2" tabindex="-1"></a></span>
-<span id="cb377-3"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb377-3" tabindex="-1"></a>data <span class="ot">&lt;-</span> mtcars</span>
-<span id="cb377-4"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb377-4" tabindex="-1"></a></span>
-<span id="cb377-5"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb377-5" tabindex="-1"></a><span class="co"># To make the data somewhat more interesting, let&#39;s set a few values to missing values (you don&#39;t need to know this code):</span></span>
-<span id="cb377-6"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb377-6" tabindex="-1"></a>data<span class="sc">$</span>wt <span class="ot">&lt;-</span> <span class="fu">na_if</span>(data<span class="sc">$</span>wt, <span class="fl">4.070</span>)</span>
-<span id="cb377-7"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb377-7" tabindex="-1"></a>data<span class="sc">$</span>mpg <span class="ot">&lt;-</span> <span class="fu">na_if</span>(data<span class="sc">$</span>mpg, <span class="fl">22.8</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb378-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb378-2"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb378-2" tabindex="-1"></a></span>
+<span id="cb378-3"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb378-3" tabindex="-1"></a>data <span class="ot">&lt;-</span> mtcars</span>
+<span id="cb378-4"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb378-4" tabindex="-1"></a></span>
+<span id="cb378-5"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb378-5" tabindex="-1"></a><span class="co"># To make the data somewhat more interesting, let&#39;s set a few values to missing values (you don&#39;t need to know this code):</span></span>
+<span id="cb378-6"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb378-6" tabindex="-1"></a>data<span class="sc">$</span>wt <span class="ot">&lt;-</span> <span class="fu">na_if</span>(data<span class="sc">$</span>wt, <span class="fl">4.070</span>)</span>
+<span id="cb378-7"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb378-7" tabindex="-1"></a>data<span class="sc">$</span>mpg <span class="ot">&lt;-</span> <span class="fu">na_if</span>(data<span class="sc">$</span>mpg, <span class="fl">22.8</span>)</span></code></pre></div>
 <p>Let’s first get to know this data. We can get some information about the
 variables that are included in the dataset by using <code>R</code>s <code>help()</code>
 function:</p>
-<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb378-1" tabindex="-1"></a><span class="fu">help</span>(mtcars)</span></code></pre></div>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb379-1" tabindex="-1"></a><span class="fu">help</span>(mtcars)</span></code></pre></div>
 <table>
 <colgroup>
 <col width="100%" />

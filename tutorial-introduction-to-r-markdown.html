@@ -23,7 +23,7 @@
 <meta name="author" content="Lara Kobilke, IfKW, Ludwig-Maximilians-Universität München" />
 
 
-<meta name="date" content="2023-10-05" />
+<meta name="date" content="2023-10-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -487,9 +487,9 @@ started.</p>
 <p>Firstly, you’ll need to install the <code>rmarkdown</code> package and its
 dependencies, including <code>knitr</code> for executing code chunks. You can do
 this from within R or RStudio:</p>
-<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="tutorial-introduction-to-r-markdown.html#cb379-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rmarkdown&quot;</span>)</span>
-<span id="cb379-2"><a href="tutorial-introduction-to-r-markdown.html#cb379-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;knitr&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="tutorial-introduction-to-r-markdown.html#cb380-1" tabindex="-1"></a><span class="fu">library</span>(rmarkdown)</span></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="tutorial-introduction-to-r-markdown.html#cb380-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rmarkdown&quot;</span>)</span>
+<span id="cb380-2"><a href="tutorial-introduction-to-r-markdown.html#cb380-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;knitr&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="tutorial-introduction-to-r-markdown.html#cb381-1" tabindex="-1"></a><span class="fu">library</span>(rmarkdown)</span></code></pre></div>
 </div>
 <div id="creating-a-new-r-markdown-file" class="section level3 hasAnchor" number="9.0.2">
 <h3><span class="header-section-number">9.0.2</span> Creating a new R Markdown file<a href="tutorial-introduction-to-r-markdown.html#creating-a-new-r-markdown-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -521,7 +521,7 @@ description of the WoJ dataset would be included in the final document.</p>
 need to ‘render’ it. You can do this in RStudio by clicking the ‘Knit’
 button. You can also use the <code>render()</code> function from the rmarkdown
 package:</p>
-<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="tutorial-introduction-to-r-markdown.html#cb381-1" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">render</span>(<span class="st">&quot;my_document.Rmd&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="tutorial-introduction-to-r-markdown.html#cb382-1" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">render</span>(<span class="st">&quot;my_document.Rmd&quot;</span>)</span></code></pre></div>
 <p>This will execute all of the R code chunks, convert the markdown text to
 formatted text, and combine everything into a final document.</p>
 </div>
@@ -604,7 +604,7 @@ I’ve found is through using the <code>rbbt</code> package <a href="https://dew
 here)</a>.
 However, it’s not hosted on <code>CRAN</code>, so be careful. This package might
 not run stable in the future.</p>
-<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="tutorial-introduction-to-r-markdown.html#cb382-1" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;paleolimbot/rbbt&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="tutorial-introduction-to-r-markdown.html#cb383-1" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;paleolimbot/rbbt&quot;</span>)</span></code></pre></div>
 <p>After installing <code>rbbt</code> and restarting RStudio, go to
 <code>Tools &gt; Modify Keyboard Shortcuts</code>. Search for <code>zotero</code> and click on
 the ‘Shortcut’ field for the ‘Insert Zotero Bibliography from Zotero

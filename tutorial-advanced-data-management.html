@@ -23,7 +23,7 @@
 <meta name="author" content="Lara Kobilke, IfKW, Ludwig-Maximilians-Universität München" />
 
 
-<meta name="date" content="2023-10-05" />
+<meta name="date" content="2023-10-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -467,7 +467,7 @@ out… :)</li>
 <li>… using advanced column selectors</li>
 </ul>
 <p>Some parts of this tutorial are heavily inspired by Christian Burkhart’s
-book Going from Beginner to Advanced in the Tidyverse. This book is the
+book <a href="https://christianb.gumroad.com/l/tidyverse-booster">Going from Beginner to Advanced in the Tidyverse</a>. This book is the
 next step in your journey to tidyverse mastery!</p>
 <div id="stop-hard-coding-your-working-directory" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Stop hard-coding your working directory!<a href="tutorial-advanced-data-management.html#stop-hard-coding-your-working-directory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -480,15 +480,15 @@ source file paths, or have different folder structures.</p>
 provides a set of functions that allow you to interact with RStudio’s
 IDE (Integrated Development Environment) programmatically. First,
 install and load the package:</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="tutorial-advanced-data-management.html#cb168-1" tabindex="-1"></a><span class="co"># install.packages(&quot;rstudioapi&quot;) # run only the first time</span></span>
-<span id="cb168-2"><a href="tutorial-advanced-data-management.html#cb168-2" tabindex="-1"></a><span class="fu">library</span>(rstudioapi)</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="tutorial-advanced-data-management.html#cb169-1" tabindex="-1"></a><span class="co"># install.packages(&quot;rstudioapi&quot;) # run only the first time</span></span>
+<span id="cb169-2"><a href="tutorial-advanced-data-management.html#cb169-2" tabindex="-1"></a><span class="fu">library</span>(rstudioapi)</span></code></pre></div>
 <p>Now you should open or create an R script file in RStudio that is
 located in the desired folder that you want to become your working
 directory. I will create a script in a folder called <code>IPR</code> that rests
 under the folder path: <code>"C:/Users/LaraK/Documents/IPR/"</code>. Save that
 script in your folder!</p>
 <p>Now copy the following line of code in your R script and execute it:</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="tutorial-advanced-data-management.html#cb169-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="fu">dirname</span>(rstudioapi<span class="sc">::</span><span class="fu">getSourceEditorContext</span>()<span class="sc">$</span>path))</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="tutorial-advanced-data-management.html#cb170-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="fu">dirname</span>(rstudioapi<span class="sc">::</span><span class="fu">getSourceEditorContext</span>()<span class="sc">$</span>path))</span></code></pre></div>
 <p>By using the <code>dirname()</code> function on
 <code>rstudioapi::getSourceEditorContext()$path</code>, we extract the directory
 <strong>path of the currently active R script</strong> and pass it to <code>setwd()</code> to
@@ -527,7 +527,8 @@ working directories.</p>
 <div id="moving-up-and-down-folders-by-using-relative-paths" class="section level3 hasAnchor" number="6.2.2">
 <h3><span class="header-section-number">6.2.2</span> Moving up and down folders by using relative paths<a href="tutorial-advanced-data-management.html#moving-up-and-down-folders-by-using-relative-paths" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Please download the .csv files that are contained in the folder
-<code>multiple_files</code> on LRZ Sync &amp; Share and store them in a subfolder
+<code>multiple_files</code> on LRZ Sync &amp; Share (<a href="https://syncandshare.lrz.de/getlink/fiVXUkKnZzQLJZJwiznMVF/">click
+here</a>) and store them in a subfolder
 called <code>mutiple_files</code> in your working directory.</p>
 <p>To move down a folder, you can use the <code>./</code> notation. The <code>./</code>
 represents the child directory of the current working directory that you
@@ -535,12 +536,12 @@ want to navigate to. For example, if you’re in the folder
 <code>"C:/Users/LaraK/Documents/IPR/"</code> and you want to move your working
 directory down to the <code>"mutiple_files"</code> subfolder, you can use the
 following code:</p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="tutorial-advanced-data-management.html#cb170-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;./mutiple_files&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="tutorial-advanced-data-management.html#cb171-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;./mutiple_files&quot;</span>)</span></code></pre></div>
 <p>To move up one level in the folder hierarchy again, you can use the
 <code>../</code> notation. The <code>../</code> represents the parent directory of the current
 working directory. You can use this notation with the <code>setwd()</code> function
 to navigate up the folder again:</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="tutorial-advanced-data-management.html#cb171-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;../&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="tutorial-advanced-data-management.html#cb172-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;../&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="reading-multiple-files-into-r" class="section level2 hasAnchor" number="6.3">
@@ -552,48 +553,48 @@ solution by creating a character vector of file paths and reading them
 into R using the <code>read_*</code> functions.</p>
 <p>First, you will need to set the folder <code>"multiple_files"</code> as your
 working directory.</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="tutorial-advanced-data-management.html#cb172-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;./mutiple_files&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="tutorial-advanced-data-management.html#cb173-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;./mutiple_files&quot;</span>)</span></code></pre></div>
 <p>Now you need to save the folder path of your working directory as a
 character string. You can use <code>getwd()</code> and save the result in an R
 object called <code>path</code>:</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="tutorial-advanced-data-management.html#cb173-1" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="fu">getwd</span>()</span>
-<span id="cb173-2"><a href="tutorial-advanced-data-management.html#cb173-2" tabindex="-1"></a>path</span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="tutorial-advanced-data-management.html#cb174-1" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="fu">getwd</span>()</span>
+<span id="cb174-2"><a href="tutorial-advanced-data-management.html#cb174-2" tabindex="-1"></a>path</span></code></pre></div>
 <p>Next, create a character vector that contains the file names of all
 files contained in your subfolder <code>"multiple_files"</code>. You can look at
 the file names of a folder by using the function <code>list.files()</code>:</p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="tutorial-advanced-data-management.html#cb174-1" tabindex="-1"></a>file_names <span class="ot">&lt;-</span> <span class="fu">list.files</span>(path)</span>
-<span id="cb174-2"><a href="tutorial-advanced-data-management.html#cb174-2" tabindex="-1"></a>file_names</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="tutorial-advanced-data-management.html#cb175-1" tabindex="-1"></a>file_names <span class="ot">&lt;-</span> <span class="fu">list.files</span>(path)</span>
+<span id="cb175-2"><a href="tutorial-advanced-data-management.html#cb175-2" tabindex="-1"></a>file_names</span></code></pre></div>
 <p>Now turn these names into a proper character vector of all the file
 paths by adding additional arguments to the function <code>list.files()</code>:</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="tutorial-advanced-data-management.html#cb175-1" tabindex="-1"></a>file_paths <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
-<span id="cb175-2"><a href="tutorial-advanced-data-management.html#cb175-2" tabindex="-1"></a>  <span class="at">path =</span> path, <span class="co"># takes the path to the working directory / folder</span></span>
-<span id="cb175-3"><a href="tutorial-advanced-data-management.html#cb175-3" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&quot;csv&quot;</span>, <span class="co"># file should contain the string &#39;csv&#39;, but you could also opt for &quot;WoJ_names&quot;</span></span>
-<span id="cb175-4"><a href="tutorial-advanced-data-management.html#cb175-4" tabindex="-1"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
-<span id="cb175-5"><a href="tutorial-advanced-data-management.html#cb175-5" tabindex="-1"></a>) <span class="co"># store the full file paths, not just the file names</span></span>
-<span id="cb175-6"><a href="tutorial-advanced-data-management.html#cb175-6" tabindex="-1"></a>file_paths</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="tutorial-advanced-data-management.html#cb176-1" tabindex="-1"></a>file_paths <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
+<span id="cb176-2"><a href="tutorial-advanced-data-management.html#cb176-2" tabindex="-1"></a>  <span class="at">path =</span> path, <span class="co"># takes the path to the working directory / folder</span></span>
+<span id="cb176-3"><a href="tutorial-advanced-data-management.html#cb176-3" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&quot;csv&quot;</span>, <span class="co"># file should contain the string &#39;csv&#39;, but you could also opt for &quot;WoJ_names&quot;</span></span>
+<span id="cb176-4"><a href="tutorial-advanced-data-management.html#cb176-4" tabindex="-1"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
+<span id="cb176-5"><a href="tutorial-advanced-data-management.html#cb176-5" tabindex="-1"></a>) <span class="co"># store the full file paths, not just the file names</span></span>
+<span id="cb176-6"><a href="tutorial-advanced-data-management.html#cb176-6" tabindex="-1"></a>file_paths</span></code></pre></div>
 <p>Finally, read the files using <code>map()</code>: Use <code>map()</code> from the <code>purrr</code>
 package (part of the <code>tidyverse</code> metapackage) to iterate over the file
 paths and read each file using a function like <code>read.csv()</code> (or
 <code>read_excel()</code>, etc.). The result will be a list of data frames.</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="tutorial-advanced-data-management.html#cb176-1" tabindex="-1"></a>data_list <span class="ot">&lt;-</span> file_paths <span class="sc">%&gt;%</span></span>
-<span id="cb176-2"><a href="tutorial-advanced-data-management.html#cb176-2" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">read.csv2</span>(<span class="at">file =</span> .x)) <span class="co"># use map to apply read.csv2 (semicolon-separated) to each individual file path, .x stands for each individual file path</span></span>
-<span id="cb176-3"><a href="tutorial-advanced-data-management.html#cb176-3" tabindex="-1"></a>data_list</span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="tutorial-advanced-data-management.html#cb177-1" tabindex="-1"></a>data_list <span class="ot">&lt;-</span> file_paths <span class="sc">%&gt;%</span></span>
+<span id="cb177-2"><a href="tutorial-advanced-data-management.html#cb177-2" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">read.csv2</span>(<span class="at">file =</span> .x)) <span class="co"># use map to apply read.csv2 (semicolon-separated) to each individual file path, .x stands for each individual file path</span></span>
+<span id="cb177-3"><a href="tutorial-advanced-data-management.html#cb177-3" tabindex="-1"></a>data_list</span></code></pre></div>
 <p>However, we don’t want our data to be read in as separate files. We want
 to combine them in one single file. We can use <code>bind_rows()</code> from the
 <code>dpylr</code> package for that:</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="tutorial-advanced-data-management.html#cb177-1" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> data_list <span class="sc">%&gt;%</span> <span class="fu">bind_rows</span>() <span class="co"># bind all of your rows in your data list into one dataframe</span></span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="tutorial-advanced-data-management.html#cb178-1" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> data_list <span class="sc">%&gt;%</span> <span class="fu">bind_rows</span>() <span class="co"># bind all of your rows in your data list into one dataframe</span></span></code></pre></div>
 <p>That involved a great number of individual steps. Let’s now consolidate
 everything into a simpler pipeline and execute it:</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="tutorial-advanced-data-management.html#cb178-1" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="fu">getwd</span>()</span>
-<span id="cb178-2"><a href="tutorial-advanced-data-management.html#cb178-2" tabindex="-1"></a>file_paths <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
-<span id="cb178-3"><a href="tutorial-advanced-data-management.html#cb178-3" tabindex="-1"></a>  <span class="at">path =</span> path,</span>
-<span id="cb178-4"><a href="tutorial-advanced-data-management.html#cb178-4" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&quot;csv&quot;</span>,</span>
-<span id="cb178-5"><a href="tutorial-advanced-data-management.html#cb178-5" tabindex="-1"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
-<span id="cb178-6"><a href="tutorial-advanced-data-management.html#cb178-6" tabindex="-1"></a>)</span>
-<span id="cb178-7"><a href="tutorial-advanced-data-management.html#cb178-7" tabindex="-1"></a></span>
-<span id="cb178-8"><a href="tutorial-advanced-data-management.html#cb178-8" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> file_paths <span class="sc">%&gt;%</span></span>
-<span id="cb178-9"><a href="tutorial-advanced-data-management.html#cb178-9" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">read.csv2</span>(<span class="at">file =</span> .x)) <span class="sc">%&gt;%</span></span>
-<span id="cb178-10"><a href="tutorial-advanced-data-management.html#cb178-10" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="tutorial-advanced-data-management.html#cb179-1" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="fu">getwd</span>()</span>
+<span id="cb179-2"><a href="tutorial-advanced-data-management.html#cb179-2" tabindex="-1"></a>file_paths <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
+<span id="cb179-3"><a href="tutorial-advanced-data-management.html#cb179-3" tabindex="-1"></a>  <span class="at">path =</span> path,</span>
+<span id="cb179-4"><a href="tutorial-advanced-data-management.html#cb179-4" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&quot;csv&quot;</span>,</span>
+<span id="cb179-5"><a href="tutorial-advanced-data-management.html#cb179-5" tabindex="-1"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
+<span id="cb179-6"><a href="tutorial-advanced-data-management.html#cb179-6" tabindex="-1"></a>)</span>
+<span id="cb179-7"><a href="tutorial-advanced-data-management.html#cb179-7" tabindex="-1"></a></span>
+<span id="cb179-8"><a href="tutorial-advanced-data-management.html#cb179-8" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> file_paths <span class="sc">%&gt;%</span></span>
+<span id="cb179-9"><a href="tutorial-advanced-data-management.html#cb179-9" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">read.csv2</span>(<span class="at">file =</span> .x)) <span class="sc">%&gt;%</span></span>
+<span id="cb179-10"><a href="tutorial-advanced-data-management.html#cb179-10" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span></code></pre></div>
 <p><strong>Note:</strong> If the files have different column names or structures, you
 may encounter issues when binding them together with this approach. Make
 sure the files have compatible structures or consider preprocessing the
@@ -611,25 +612,25 @@ column name <code>country</code> has been capitalized (i.e., changed to <code>CO
 attempt to reload the .csv files once more and set the column names to
 lowercase dynamically. To handle the missing column, we will use
 <code>bind_rows</code> function:</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="tutorial-advanced-data-management.html#cb179-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;./mutiple_files_messy&quot;</span>)</span>
-<span id="cb179-2"><a href="tutorial-advanced-data-management.html#cb179-2" tabindex="-1"></a></span>
-<span id="cb179-3"><a href="tutorial-advanced-data-management.html#cb179-3" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="fu">getwd</span>()</span>
-<span id="cb179-4"><a href="tutorial-advanced-data-management.html#cb179-4" tabindex="-1"></a>file_paths <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
-<span id="cb179-5"><a href="tutorial-advanced-data-management.html#cb179-5" tabindex="-1"></a>  <span class="at">path =</span> path,</span>
-<span id="cb179-6"><a href="tutorial-advanced-data-management.html#cb179-6" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&quot;csv&quot;</span>,</span>
-<span id="cb179-7"><a href="tutorial-advanced-data-management.html#cb179-7" tabindex="-1"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
-<span id="cb179-8"><a href="tutorial-advanced-data-management.html#cb179-8" tabindex="-1"></a>)</span>
-<span id="cb179-9"><a href="tutorial-advanced-data-management.html#cb179-9" tabindex="-1"></a></span>
-<span id="cb179-10"><a href="tutorial-advanced-data-management.html#cb179-10" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> file_paths <span class="sc">%&gt;%</span></span>
-<span id="cb179-11"><a href="tutorial-advanced-data-management.html#cb179-11" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">read.csv2</span>(<span class="at">file =</span> .x) <span class="sc">%&gt;%</span></span>
-<span id="cb179-12"><a href="tutorial-advanced-data-management.html#cb179-12" tabindex="-1"></a>    <span class="fu">setNames</span>(<span class="fu">tolower</span>(<span class="fu">names</span>(.)))) <span class="sc">%&gt;%</span></span>
-<span id="cb179-13"><a href="tutorial-advanced-data-management.html#cb179-13" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="tutorial-advanced-data-management.html#cb180-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;./mutiple_files_messy&quot;</span>)</span>
+<span id="cb180-2"><a href="tutorial-advanced-data-management.html#cb180-2" tabindex="-1"></a></span>
+<span id="cb180-3"><a href="tutorial-advanced-data-management.html#cb180-3" tabindex="-1"></a>path <span class="ot">&lt;-</span> <span class="fu">getwd</span>()</span>
+<span id="cb180-4"><a href="tutorial-advanced-data-management.html#cb180-4" tabindex="-1"></a>file_paths <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
+<span id="cb180-5"><a href="tutorial-advanced-data-management.html#cb180-5" tabindex="-1"></a>  <span class="at">path =</span> path,</span>
+<span id="cb180-6"><a href="tutorial-advanced-data-management.html#cb180-6" tabindex="-1"></a>  <span class="at">pattern =</span> <span class="st">&quot;csv&quot;</span>,</span>
+<span id="cb180-7"><a href="tutorial-advanced-data-management.html#cb180-7" tabindex="-1"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
+<span id="cb180-8"><a href="tutorial-advanced-data-management.html#cb180-8" tabindex="-1"></a>)</span>
+<span id="cb180-9"><a href="tutorial-advanced-data-management.html#cb180-9" tabindex="-1"></a></span>
+<span id="cb180-10"><a href="tutorial-advanced-data-management.html#cb180-10" tabindex="-1"></a>combined_data <span class="ot">&lt;-</span> file_paths <span class="sc">%&gt;%</span></span>
+<span id="cb180-11"><a href="tutorial-advanced-data-management.html#cb180-11" tabindex="-1"></a>  <span class="fu">map</span>(<span class="sc">~</span> <span class="fu">read.csv2</span>(<span class="at">file =</span> .x) <span class="sc">%&gt;%</span></span>
+<span id="cb180-12"><a href="tutorial-advanced-data-management.html#cb180-12" tabindex="-1"></a>    <span class="fu">setNames</span>(<span class="fu">tolower</span>(<span class="fu">names</span>(.)))) <span class="sc">%&gt;%</span></span>
+<span id="cb180-13"><a href="tutorial-advanced-data-management.html#cb180-13" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span></code></pre></div>
 <p>Neat! Note that you can always exchange the string in the <code>pattern</code>
-argument of <code>list.files</code> include a regular expression. I can’t cover
+argument of <code>list.files</code> to include a regular expression. I can’t cover
 regular expressions and the <code>stringr</code> package in this tutorial, but if
 you are interested in mastering regular expressions, you can have look
 at my tutorial for our <a href="https://lkobilke.github.io/data-journalism/tutorial-text-manipulation-with-stringr.html#tutorial-text-manipulation-with-stringr">MA journalism
-students</a></p>
+students</a>.</p>
 </div>
 </div>
 <div id="joining-two-datasets" class="section level2 hasAnchor" number="6.4">
@@ -637,22 +638,23 @@ students</a></p>
 <p>We’ve already covered how to join multiple datasets while loading the
 data into R. This next approach joins datasets <strong>after</strong> they’ve been loaded
 into R. It’s the more common approach.</p>
-<p>First things first, let’s load the libraries and data we’ll need:</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="tutorial-advanced-data-management.html#cb180-1" tabindex="-1"></a><span class="fu">library</span>(tidycomm)</span>
-<span id="cb180-2"><a href="tutorial-advanced-data-management.html#cb180-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb180-3"><a href="tutorial-advanced-data-management.html#cb180-3" tabindex="-1"></a>WoJ <span class="ot">&lt;-</span> tidycomm<span class="sc">::</span>WoJ <span class="sc">%&gt;%</span></span>
-<span id="cb180-4"><a href="tutorial-advanced-data-management.html#cb180-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">case_id =</span> <span class="fu">row_number</span>())</span></code></pre></div>
+<p>First things first, let’s load the libraries and data we’ll need. As we load this data, we’re doing an extra step in our pipeline. For every row of data, we’re adding a unique ID. This ID is simply the row’s position in the list (so, the first row is 1, the second is 2, and so on). We’re naming this unique ID as case_id.</p>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="tutorial-advanced-data-management.html#cb181-1" tabindex="-1"></a><span class="co"># install.packages(&quot;tidycomm&quot;) # only the first time</span></span>
+<span id="cb181-2"><a href="tutorial-advanced-data-management.html#cb181-2" tabindex="-1"></a><span class="fu">library</span>(tidycomm)</span>
+<span id="cb181-3"><a href="tutorial-advanced-data-management.html#cb181-3" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb181-4"><a href="tutorial-advanced-data-management.html#cb181-4" tabindex="-1"></a>WoJ <span class="ot">&lt;-</span> tidycomm<span class="sc">::</span>WoJ <span class="sc">%&gt;%</span></span>
+<span id="cb181-5"><a href="tutorial-advanced-data-management.html#cb181-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">case_id =</span> <span class="fu">row_number</span>())</span></code></pre></div>
 <p>Next, we’ll split the WoJ dataset into two groups based on work
 experience: rookies and veterans. <strong>We’ll also reduce the numbers of
 rookies and veterans based on an arbitrary third variable to make the
 cases included in the datasets somewhat different from each other.</strong></p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="tutorial-advanced-data-management.html#cb181-1" tabindex="-1"></a>rookies <span class="ot">&lt;-</span> WoJ <span class="sc">%&gt;%</span></span>
-<span id="cb181-2"><a href="tutorial-advanced-data-management.html#cb181-2" tabindex="-1"></a>  <span class="fu">filter</span>(work_experience <span class="sc">&lt;=</span> <span class="dv">12</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb181-3"><a href="tutorial-advanced-data-management.html#cb181-3" tabindex="-1"></a>  <span class="fu">filter</span>(autonomy_selection <span class="sc">&gt;</span> <span class="dv">1</span>)</span>
-<span id="cb181-4"><a href="tutorial-advanced-data-management.html#cb181-4" tabindex="-1"></a></span>
-<span id="cb181-5"><a href="tutorial-advanced-data-management.html#cb181-5" tabindex="-1"></a>veterans <span class="ot">&lt;-</span> WoJ <span class="sc">%&gt;%</span></span>
-<span id="cb181-6"><a href="tutorial-advanced-data-management.html#cb181-6" tabindex="-1"></a>  <span class="fu">filter</span>(work_experience <span class="sc">&gt;=</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb181-7"><a href="tutorial-advanced-data-management.html#cb181-7" tabindex="-1"></a>  <span class="fu">filter</span>(ethics_1 <span class="sc">&lt;</span> <span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="tutorial-advanced-data-management.html#cb182-1" tabindex="-1"></a>rookies <span class="ot">&lt;-</span> WoJ <span class="sc">%&gt;%</span></span>
+<span id="cb182-2"><a href="tutorial-advanced-data-management.html#cb182-2" tabindex="-1"></a>  <span class="fu">filter</span>(work_experience <span class="sc">&lt;=</span> <span class="dv">12</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb182-3"><a href="tutorial-advanced-data-management.html#cb182-3" tabindex="-1"></a>  <span class="fu">filter</span>(autonomy_selection <span class="sc">&gt;</span> <span class="dv">1</span>)</span>
+<span id="cb182-4"><a href="tutorial-advanced-data-management.html#cb182-4" tabindex="-1"></a></span>
+<span id="cb182-5"><a href="tutorial-advanced-data-management.html#cb182-5" tabindex="-1"></a>veterans <span class="ot">&lt;-</span> WoJ <span class="sc">%&gt;%</span></span>
+<span id="cb182-6"><a href="tutorial-advanced-data-management.html#cb182-6" tabindex="-1"></a>  <span class="fu">filter</span>(work_experience <span class="sc">&gt;=</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb182-7"><a href="tutorial-advanced-data-management.html#cb182-7" tabindex="-1"></a>  <span class="fu">filter</span>(ethics_1 <span class="sc">&lt;</span> <span class="dv">5</span>)</span></code></pre></div>
 <p>Combined, these two datasets include 1,169 <strong>unique</strong> journalists. The rookies are made up of 433 journalists and the veterans make up 853. 117 journalists are being classified as BOTH rookie AND veteran, i.e. have been counted twice. This means we are dealing with: 433 + 853 - 117 = 1,169.</p>
 <p>Now, let’s say you want to merge these datasets back together for some
 comparative analysis. The <code>tidyr</code> package (part of the <code>tidyverse</code>!)
@@ -663,9 +665,9 @@ explore them!</p>
 <p><strong>This is like an overly correct librarian.</strong> It only takes rows that
 have matching keys <strong>in both</strong> datasets, otherwise it will drop the
 rows.</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="tutorial-advanced-data-management.html#cb182-1" tabindex="-1"></a>inner_joined <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(rookies, veterans, <span class="at">by =</span> <span class="st">&quot;case_id&quot;</span>)</span>
-<span id="cb182-2"><a href="tutorial-advanced-data-management.html#cb182-2" tabindex="-1"></a></span>
-<span id="cb182-3"><a href="tutorial-advanced-data-management.html#cb182-3" tabindex="-1"></a>inner_joined</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="tutorial-advanced-data-management.html#cb183-1" tabindex="-1"></a>inner_joined <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(rookies, veterans, <span class="at">by =</span> <span class="st">&quot;case_id&quot;</span>)</span>
+<span id="cb183-2"><a href="tutorial-advanced-data-management.html#cb183-2" tabindex="-1"></a></span>
+<span id="cb183-3"><a href="tutorial-advanced-data-management.html#cb183-3" tabindex="-1"></a>inner_joined</span></code></pre></div>
 <pre><code>## # A tibble: 117 × 31
 ##    country.x   reach.x       employment.x temp_contract.x autonomy_selection.x
 ##    &lt;fct&gt;       &lt;fct&gt;         &lt;chr&gt;        &lt;fct&gt;                          &lt;dbl&gt;
@@ -691,9 +693,9 @@ rows.</p>
 <h3><span class="header-section-number">6.4.2</span> left_join<a href="tutorial-advanced-data-management.html#left_join" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>This is like a fan of the first dataset.</strong> It takes all rows from the
 first dataset and the matched rows from the second dataset.</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="tutorial-advanced-data-management.html#cb184-1" tabindex="-1"></a>left_joined <span class="ot">&lt;-</span> <span class="fu">left_join</span>(rookies, veterans, <span class="at">by =</span> <span class="st">&quot;case_id&quot;</span>)</span>
-<span id="cb184-2"><a href="tutorial-advanced-data-management.html#cb184-2" tabindex="-1"></a></span>
-<span id="cb184-3"><a href="tutorial-advanced-data-management.html#cb184-3" tabindex="-1"></a>left_joined</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="tutorial-advanced-data-management.html#cb185-1" tabindex="-1"></a>left_joined <span class="ot">&lt;-</span> <span class="fu">left_join</span>(rookies, veterans, <span class="at">by =</span> <span class="st">&quot;case_id&quot;</span>)</span>
+<span id="cb185-2"><a href="tutorial-advanced-data-management.html#cb185-2" tabindex="-1"></a></span>
+<span id="cb185-3"><a href="tutorial-advanced-data-management.html#cb185-3" tabindex="-1"></a>left_joined</span></code></pre></div>
 <pre><code>## # A tibble: 433 × 31
 ##    country.x   reach.x       employment.x temp_contract.x autonomy_selection.x
 ##    &lt;fct&gt;       &lt;fct&gt;         &lt;chr&gt;        &lt;fct&gt;                          &lt;dbl&gt;
@@ -719,10 +721,10 @@ first dataset and the matched rows from the second dataset.</p>
 <h3><span class="header-section-number">6.4.3</span> right_join<a href="tutorial-advanced-data-management.html#right_join" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>This is like a fan of the second dataset.</strong> It takes all rows from the
 second dataset and the matched rows from the first dataset.</p>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="tutorial-advanced-data-management.html#cb186-1" tabindex="-1"></a>right_joined <span class="ot">&lt;-</span> <span class="fu">right_join</span>(rookies, veterans, <span class="at">by =</span> <span class="st">&quot;case_id&quot;</span>)</span>
-<span id="cb186-2"><a href="tutorial-advanced-data-management.html#cb186-2" tabindex="-1"></a><span class="co"># Pro tip: you can use the argument `by = your_column_here` to match the two datsets based on a specific column, e.g. case id</span></span>
-<span id="cb186-3"><a href="tutorial-advanced-data-management.html#cb186-3" tabindex="-1"></a></span>
-<span id="cb186-4"><a href="tutorial-advanced-data-management.html#cb186-4" tabindex="-1"></a>right_joined</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="tutorial-advanced-data-management.html#cb187-1" tabindex="-1"></a>right_joined <span class="ot">&lt;-</span> <span class="fu">right_join</span>(rookies, veterans, <span class="at">by =</span> <span class="st">&quot;case_id&quot;</span>)</span>
+<span id="cb187-2"><a href="tutorial-advanced-data-management.html#cb187-2" tabindex="-1"></a><span class="co"># Pro tip: you can use the argument `by = your_column_here` to match the two datsets based on a specific column, e.g. case id</span></span>
+<span id="cb187-3"><a href="tutorial-advanced-data-management.html#cb187-3" tabindex="-1"></a></span>
+<span id="cb187-4"><a href="tutorial-advanced-data-management.html#cb187-4" tabindex="-1"></a>right_joined</span></code></pre></div>
 <pre><code>## # A tibble: 853 × 31
 ##    country.x   reach.x       employment.x temp_contract.x autonomy_selection.x
 ##    &lt;fct&gt;       &lt;fct&gt;         &lt;chr&gt;        &lt;fct&gt;                          &lt;dbl&gt;
@@ -748,10 +750,10 @@ second dataset and the matched rows from the first dataset.</p>
 <h3><span class="header-section-number">6.4.4</span> full_join<a href="tutorial-advanced-data-management.html#full_join" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>This is like a hoarder.</strong> It takes all rows and throws in missings for
 variables that are not part of both datasets.</p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="tutorial-advanced-data-management.html#cb188-1" tabindex="-1"></a>full_joined <span class="ot">&lt;-</span> <span class="fu">full_join</span>(rookies, veterans, <span class="at">by =</span> <span class="st">&quot;case_id&quot;</span>)</span>
-<span id="cb188-2"><a href="tutorial-advanced-data-management.html#cb188-2" tabindex="-1"></a><span class="co"># Pro tip: you can use the argument `by = your_column_here` to match the two datsets based on a specific column, e.g. case id</span></span>
-<span id="cb188-3"><a href="tutorial-advanced-data-management.html#cb188-3" tabindex="-1"></a></span>
-<span id="cb188-4"><a href="tutorial-advanced-data-management.html#cb188-4" tabindex="-1"></a>full_joined</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="tutorial-advanced-data-management.html#cb189-1" tabindex="-1"></a>full_joined <span class="ot">&lt;-</span> <span class="fu">full_join</span>(rookies, veterans, <span class="at">by =</span> <span class="st">&quot;case_id&quot;</span>)</span>
+<span id="cb189-2"><a href="tutorial-advanced-data-management.html#cb189-2" tabindex="-1"></a><span class="co"># Pro tip: you can use the argument `by = your_column_here` to match the two datsets based on a specific column, e.g. case id</span></span>
+<span id="cb189-3"><a href="tutorial-advanced-data-management.html#cb189-3" tabindex="-1"></a></span>
+<span id="cb189-4"><a href="tutorial-advanced-data-management.html#cb189-4" tabindex="-1"></a>full_joined</span></code></pre></div>
 <pre><code>## # A tibble: 1,169 × 31
 ##    country.x   reach.x       employment.x temp_contract.x autonomy_selection.x
 ##    &lt;fct&gt;       &lt;fct&gt;         &lt;chr&gt;        &lt;fct&gt;                          &lt;dbl&gt;
@@ -781,19 +783,19 @@ variables that are not part of both datasets.</p>
 fictional dataset based on the Worlds of Journalism (WoJ) dataset, with
 a twist - it will have several panel waves. Imagine that the WoJ dataset
 has been expanded to include data from different years:</p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="tutorial-advanced-data-management.html#cb190-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb190-2"><a href="tutorial-advanced-data-management.html#cb190-2" tabindex="-1"></a>WoJ_panel <span class="ot">&lt;-</span> WoJ <span class="sc">%&gt;%</span></span>
-<span id="cb190-3"><a href="tutorial-advanced-data-management.html#cb190-3" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb190-4"><a href="tutorial-advanced-data-management.html#cb190-4" tabindex="-1"></a>  <span class="fu">select</span>(case_id, work_experience, autonomy_selection) <span class="sc">%&gt;%</span></span>
-<span id="cb190-5"><a href="tutorial-advanced-data-management.html#cb190-5" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb190-6"><a href="tutorial-advanced-data-management.html#cb190-6" tabindex="-1"></a>    <span class="at">work_experience_w2018 =</span> work_experience <span class="sc">+</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb190-7"><a href="tutorial-advanced-data-management.html#cb190-7" tabindex="-1"></a>    <span class="at">work_experience_w2019 =</span> work_experience_w2018 <span class="sc">+</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb190-8"><a href="tutorial-advanced-data-management.html#cb190-8" tabindex="-1"></a>    <span class="at">autonomy_selection_w2018 =</span> autonomy_selection <span class="sc">+</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb190-9"><a href="tutorial-advanced-data-management.html#cb190-9" tabindex="-1"></a>    <span class="at">autonomy_selection_w2019 =</span> autonomy_selection_w2018 <span class="sc">+</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb190-10"><a href="tutorial-advanced-data-management.html#cb190-10" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb190-11"><a href="tutorial-advanced-data-management.html#cb190-11" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(work_experience, autonomy_selection))</span>
-<span id="cb190-12"><a href="tutorial-advanced-data-management.html#cb190-12" tabindex="-1"></a></span>
-<span id="cb190-13"><a href="tutorial-advanced-data-management.html#cb190-13" tabindex="-1"></a>WoJ_panel</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="tutorial-advanced-data-management.html#cb191-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb191-2"><a href="tutorial-advanced-data-management.html#cb191-2" tabindex="-1"></a>WoJ_panel <span class="ot">&lt;-</span> WoJ <span class="sc">%&gt;%</span></span>
+<span id="cb191-3"><a href="tutorial-advanced-data-management.html#cb191-3" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb191-4"><a href="tutorial-advanced-data-management.html#cb191-4" tabindex="-1"></a>  <span class="fu">select</span>(case_id, work_experience, autonomy_selection) <span class="sc">%&gt;%</span></span>
+<span id="cb191-5"><a href="tutorial-advanced-data-management.html#cb191-5" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb191-6"><a href="tutorial-advanced-data-management.html#cb191-6" tabindex="-1"></a>    <span class="at">work_experience_w2018 =</span> work_experience <span class="sc">+</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb191-7"><a href="tutorial-advanced-data-management.html#cb191-7" tabindex="-1"></a>    <span class="at">work_experience_w2019 =</span> work_experience_w2018 <span class="sc">+</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb191-8"><a href="tutorial-advanced-data-management.html#cb191-8" tabindex="-1"></a>    <span class="at">autonomy_selection_w2018 =</span> autonomy_selection <span class="sc">+</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb191-9"><a href="tutorial-advanced-data-management.html#cb191-9" tabindex="-1"></a>    <span class="at">autonomy_selection_w2019 =</span> autonomy_selection_w2018 <span class="sc">+</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">:</span><span class="dv">1</span>, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb191-10"><a href="tutorial-advanced-data-management.html#cb191-10" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb191-11"><a href="tutorial-advanced-data-management.html#cb191-11" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(work_experience, autonomy_selection))</span>
+<span id="cb191-12"><a href="tutorial-advanced-data-management.html#cb191-12" tabindex="-1"></a></span>
+<span id="cb191-13"><a href="tutorial-advanced-data-management.html#cb191-13" tabindex="-1"></a>WoJ_panel</span></code></pre></div>
 <pre><code>## # A tibble: 10 × 5
 ##    case_id work_experience_w2018 work_experience_w2019 autonomy_selection_w2018
 ##      &lt;int&gt;                 &lt;dbl&gt;                 &lt;dbl&gt;                    &lt;dbl&gt;
@@ -813,15 +815,15 @@ has been expanded to include data from different years:</p>
 <p>Let’s say you want to analyze how work experience and autonomy selection
 change over time. For this, you need to reshape the dataset into a
 longer format.</p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="tutorial-advanced-data-management.html#cb192-1" tabindex="-1"></a>long_data <span class="ot">&lt;-</span> WoJ_panel <span class="sc">%&gt;%</span></span>
-<span id="cb192-2"><a href="tutorial-advanced-data-management.html#cb192-2" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb192-3"><a href="tutorial-advanced-data-management.html#cb192-3" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">contains</span>(<span class="st">&quot;_w&quot;</span>),</span>
-<span id="cb192-4"><a href="tutorial-advanced-data-management.html#cb192-4" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">&quot;variable&quot;</span>, <span class="st">&quot;wave&quot;</span>),</span>
-<span id="cb192-5"><a href="tutorial-advanced-data-management.html#cb192-5" tabindex="-1"></a>    <span class="at">names_pattern =</span> <span class="st">&quot;(.*)_(w</span><span class="sc">\\</span><span class="st">d+)&quot;</span>, <span class="co"># the symbol starts with any symbol that repeats 0 to several times until a _ is reached, followed by at least one digit</span></span>
-<span id="cb192-6"><a href="tutorial-advanced-data-management.html#cb192-6" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">&quot;value&quot;</span></span>
-<span id="cb192-7"><a href="tutorial-advanced-data-management.html#cb192-7" tabindex="-1"></a>  )</span>
-<span id="cb192-8"><a href="tutorial-advanced-data-management.html#cb192-8" tabindex="-1"></a></span>
-<span id="cb192-9"><a href="tutorial-advanced-data-management.html#cb192-9" tabindex="-1"></a>long_data</span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="tutorial-advanced-data-management.html#cb193-1" tabindex="-1"></a>long_data <span class="ot">&lt;-</span> WoJ_panel <span class="sc">%&gt;%</span></span>
+<span id="cb193-2"><a href="tutorial-advanced-data-management.html#cb193-2" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb193-3"><a href="tutorial-advanced-data-management.html#cb193-3" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">contains</span>(<span class="st">&quot;_w&quot;</span>),</span>
+<span id="cb193-4"><a href="tutorial-advanced-data-management.html#cb193-4" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">&quot;variable&quot;</span>, <span class="st">&quot;wave&quot;</span>),</span>
+<span id="cb193-5"><a href="tutorial-advanced-data-management.html#cb193-5" tabindex="-1"></a>    <span class="at">names_pattern =</span> <span class="st">&quot;(.*)_(w</span><span class="sc">\\</span><span class="st">d+)&quot;</span>, <span class="co"># the symbol starts with any symbol that repeats 0 to several times until a _ is reached, followed by at least one digit</span></span>
+<span id="cb193-6"><a href="tutorial-advanced-data-management.html#cb193-6" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">&quot;value&quot;</span></span>
+<span id="cb193-7"><a href="tutorial-advanced-data-management.html#cb193-7" tabindex="-1"></a>  )</span>
+<span id="cb193-8"><a href="tutorial-advanced-data-management.html#cb193-8" tabindex="-1"></a></span>
+<span id="cb193-9"><a href="tutorial-advanced-data-management.html#cb193-9" tabindex="-1"></a>long_data</span></code></pre></div>
 <pre><code>## # A tibble: 40 × 4
 ##    case_id variable           wave  value
 ##      &lt;int&gt; &lt;chr&gt;              &lt;chr&gt; &lt;dbl&gt;
@@ -843,14 +845,14 @@ represents a single observation for a variable at a specific wave.</p>
 <h3><span class="header-section-number">6.5.2</span> pivot_wider()<a href="tutorial-advanced-data-management.html#pivot_wider" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Now, let’s say you want to do the opposite. You have a long dataset and
 you want to reshape it into a wider format.</p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="tutorial-advanced-data-management.html#cb194-1" tabindex="-1"></a>wide_data <span class="ot">&lt;-</span> long_data <span class="sc">%&gt;%</span></span>
-<span id="cb194-2"><a href="tutorial-advanced-data-management.html#cb194-2" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
-<span id="cb194-3"><a href="tutorial-advanced-data-management.html#cb194-3" tabindex="-1"></a>    <span class="at">names_from =</span> <span class="fu">c</span>(<span class="st">&quot;variable&quot;</span>, <span class="st">&quot;wave&quot;</span>),</span>
-<span id="cb194-4"><a href="tutorial-advanced-data-management.html#cb194-4" tabindex="-1"></a>    <span class="at">names_sep =</span> <span class="st">&quot;_&quot;</span>,</span>
-<span id="cb194-5"><a href="tutorial-advanced-data-management.html#cb194-5" tabindex="-1"></a>    <span class="at">values_from =</span> <span class="st">&quot;value&quot;</span></span>
-<span id="cb194-6"><a href="tutorial-advanced-data-management.html#cb194-6" tabindex="-1"></a>  )</span>
-<span id="cb194-7"><a href="tutorial-advanced-data-management.html#cb194-7" tabindex="-1"></a></span>
-<span id="cb194-8"><a href="tutorial-advanced-data-management.html#cb194-8" tabindex="-1"></a>wide_data</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="tutorial-advanced-data-management.html#cb195-1" tabindex="-1"></a>wide_data <span class="ot">&lt;-</span> long_data <span class="sc">%&gt;%</span></span>
+<span id="cb195-2"><a href="tutorial-advanced-data-management.html#cb195-2" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb195-3"><a href="tutorial-advanced-data-management.html#cb195-3" tabindex="-1"></a>    <span class="at">names_from =</span> <span class="fu">c</span>(<span class="st">&quot;variable&quot;</span>, <span class="st">&quot;wave&quot;</span>),</span>
+<span id="cb195-4"><a href="tutorial-advanced-data-management.html#cb195-4" tabindex="-1"></a>    <span class="at">names_sep =</span> <span class="st">&quot;_&quot;</span>,</span>
+<span id="cb195-5"><a href="tutorial-advanced-data-management.html#cb195-5" tabindex="-1"></a>    <span class="at">values_from =</span> <span class="st">&quot;value&quot;</span></span>
+<span id="cb195-6"><a href="tutorial-advanced-data-management.html#cb195-6" tabindex="-1"></a>  )</span>
+<span id="cb195-7"><a href="tutorial-advanced-data-management.html#cb195-7" tabindex="-1"></a></span>
+<span id="cb195-8"><a href="tutorial-advanced-data-management.html#cb195-8" tabindex="-1"></a>wide_data</span></code></pre></div>
 <pre><code>## # A tibble: 10 × 5
 ##    case_id work_experience_w2018 work_experience_w2019 autonomy_selection_w2018
 ##      &lt;int&gt;                 &lt;dbl&gt;                 &lt;dbl&gt;                    &lt;dbl&gt;
@@ -880,12 +882,12 @@ and substrings. In this tutorial, we will look at the following
 contains() 5. matches() 6. num_range() 7. where()</p>
 <p>Let’s first import the full <code>Worlds of Journalism</code> dataset from the
 <code>tidycomm</code> package:</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="tutorial-advanced-data-management.html#cb196-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> tidycomm<span class="sc">::</span>WoJ</span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="tutorial-advanced-data-management.html#cb197-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> tidycomm<span class="sc">::</span>WoJ</span></code></pre></div>
 <div id="selecting-the-last-column" class="section level3 hasAnchor" number="6.6.1">
 <h3><span class="header-section-number">6.6.1</span> Selecting the last column<a href="tutorial-advanced-data-management.html#selecting-the-last-column" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Use <code>last_col()</code> when you want to select the last column of a data frame
 regardless of its name.</p>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="tutorial-advanced-data-management.html#cb197-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">last_col</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="tutorial-advanced-data-management.html#cb198-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">last_col</span>())</span></code></pre></div>
 <pre><code>## # A tibble: 1,200 × 1
 ##    trust_politicians
 ##                &lt;dbl&gt;
@@ -901,7 +903,7 @@ regardless of its name.</p>
 ## 10                 3
 ## # ℹ 1,190 more rows</code></pre>
 <p>You can also select all columns except the last one:</p>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="tutorial-advanced-data-management.html#cb199-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">!</span><span class="fu">last_col</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="tutorial-advanced-data-management.html#cb200-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">!</span><span class="fu">last_col</span>())</span></code></pre></div>
 <pre><code>## # A tibble: 1,200 × 14
 ##    country   reach employment temp_contract autonomy_selection autonomy_emphasis
 ##    &lt;fct&gt;     &lt;fct&gt; &lt;chr&gt;      &lt;fct&gt;                      &lt;dbl&gt;             &lt;dbl&gt;
@@ -923,7 +925,7 @@ regardless of its name.</p>
 <div id="selecting-columns-that-start-with-end-with-or-contain-a-specific-string" class="section level3 hasAnchor" number="6.6.2">
 <h3><span class="header-section-number">6.6.2</span> Selecting columns that start with, end with or contain a specific string<a href="tutorial-advanced-data-management.html#selecting-columns-that-start-with-end-with-or-contain-a-specific-string" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>starts_with()</code> selects columns that start with a specific prefix:</p>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="tutorial-advanced-data-management.html#cb201-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;ethics&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="tutorial-advanced-data-management.html#cb202-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;ethics&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 1,200 × 4
 ##    ethics_1 ethics_2 ethics_3 ethics_4
 ##       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
@@ -938,9 +940,9 @@ regardless of its name.</p>
 ##  9        1        2        1        3
 ## 10        1        4        4        4
 ## # ℹ 1,190 more rows</code></pre>
-<p><code>ends_with()</code> selects columns that end with onre or more specific
+<p><code>ends_with()</code> selects columns that end with one or more specific
 suffixes:</p>
-<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="tutorial-advanced-data-management.html#cb203-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">ends_with</span>(<span class="fu">c</span>(<span class="st">&quot;_1&quot;</span>, <span class="st">&quot;_2&quot;</span>))) <span class="co"># ends with _1 OR _2</span></span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="tutorial-advanced-data-management.html#cb204-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">ends_with</span>(<span class="fu">c</span>(<span class="st">&quot;_1&quot;</span>, <span class="st">&quot;_2&quot;</span>))) <span class="co"># ends with _1 OR _2</span></span></code></pre></div>
 <pre><code>## # A tibble: 1,200 × 2
 ##    ethics_1 ethics_2
 ##       &lt;dbl&gt;    &lt;dbl&gt;
@@ -956,7 +958,7 @@ suffixes:</p>
 ## 10        1        4
 ## # ℹ 1,190 more rows</code></pre>
 <p><code>contains()</code> selects columns that contain a specific substring:</p>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="tutorial-advanced-data-management.html#cb205-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">&quot;_&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="tutorial-advanced-data-management.html#cb206-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">&quot;_&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 1,200 × 12
 ##    temp_contract autonomy_selection autonomy_emphasis ethics_1 ethics_2 ethics_3
 ##    &lt;fct&gt;                      &lt;dbl&gt;             &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
@@ -975,7 +977,7 @@ suffixes:</p>
 ## #   trust_parliament &lt;dbl&gt;, trust_government &lt;dbl&gt;, trust_parties &lt;dbl&gt;,
 ## #   trust_politicians &lt;dbl&gt;</code></pre>
 <p><code>matches()</code> selects columns based on a regular expression pattern:</p>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="tutorial-advanced-data-management.html#cb207-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">matches</span>(<span class="st">&quot;^ethics&quot;</span>)) <span class="co"># ^ stands for &quot;begins with&quot; in regex notation</span></span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="tutorial-advanced-data-management.html#cb208-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">matches</span>(<span class="st">&quot;^ethics&quot;</span>)) <span class="co"># ^ stands for &quot;begins with&quot; in regex notation</span></span></code></pre></div>
 <pre><code>## # A tibble: 1,200 × 4
 ##    ethics_1 ethics_2 ethics_3 ethics_4
 ##       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
@@ -990,7 +992,7 @@ suffixes:</p>
 ##  9        1        2        1        3
 ## 10        1        4        4        4
 ## # ℹ 1,190 more rows</code></pre>
-<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="tutorial-advanced-data-management.html#cb209-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">matches</span>(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">d&quot;</span>)) <span class="co"># \\d stands for &quot;contains a digit/number&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="tutorial-advanced-data-management.html#cb210-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">matches</span>(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">d&quot;</span>)) <span class="co"># \\d stands for &quot;contains a digit/number&quot; in regex notation</span></span></code></pre></div>
 <pre><code>## # A tibble: 1,200 × 4
 ##    ethics_1 ethics_2 ethics_3 ethics_4
 ##       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
@@ -1009,13 +1011,13 @@ suffixes:</p>
 case-sensetive. This means that they will match both upper- and
 lowercase letters. If you want to make them case-sensetive, use the
 <code>ignore.case</code> argument and set it to FALSE.</p>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="tutorial-advanced-data-management.html#cb211-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;Ethics&quot;</span>, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>)) <span class="co"># but there is not capitalized Ethics in the data</span></span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="tutorial-advanced-data-management.html#cb212-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">&quot;Ethics&quot;</span>, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>)) <span class="co"># but there is not capitalized Ethics in the data</span></span></code></pre></div>
 <pre><code>## # A tibble: 1,200 × 0</code></pre>
 </div>
 <div id="selecting-columns-based-on-a-numeric-range" class="section level3 hasAnchor" number="6.6.3">
 <h3><span class="header-section-number">6.6.3</span> Selecting columns based on a numeric range<a href="tutorial-advanced-data-management.html#selecting-columns-based-on-a-numeric-range" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You can selects columns based on a numerical range with <code>num_range()</code>:</p>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="tutorial-advanced-data-management.html#cb213-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">num_range</span>(<span class="st">&quot;ethics_&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)) <span class="co"># selects ethics_1 and ethics2, but not ethics_3, etc.</span></span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="tutorial-advanced-data-management.html#cb214-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">num_range</span>(<span class="st">&quot;ethics_&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)) <span class="co"># selects ethics_1 and ethics2, but not ethics_3, etc.</span></span></code></pre></div>
 <pre><code>## # A tibble: 1,200 × 2
 ##    ethics_1 ethics_2
 ##       &lt;dbl&gt;    &lt;dbl&gt;
@@ -1035,7 +1037,7 @@ lowercase letters. If you want to make them case-sensetive, use the
 <h3><span class="header-section-number">6.6.4</span> Selecting columns based on their type<a href="tutorial-advanced-data-management.html#selecting-columns-based-on-their-type" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You can selects columns based on their type with <code>where()</code>, e.g., all
 character columns:</p>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="tutorial-advanced-data-management.html#cb215-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.character))</span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="tutorial-advanced-data-management.html#cb216-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.character))</span></code></pre></div>
 <pre><code>## # A tibble: 1,200 × 1
 ##    employment
 ##    &lt;chr&gt;     
@@ -1051,7 +1053,7 @@ character columns:</p>
 ## 10 Full-time 
 ## # ℹ 1,190 more rows</code></pre>
 <p>Or you could select all columns that contain numbers:</p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="tutorial-advanced-data-management.html#cb217-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.numeric))</span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="tutorial-advanced-data-management.html#cb218-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.numeric))</span></code></pre></div>
 <pre><code>## # A tibble: 1,200 × 11
 ##    autonomy_selection autonomy_emphasis ethics_1 ethics_2 ethics_3 ethics_4
 ##                 &lt;dbl&gt;             &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
@@ -1076,7 +1078,7 @@ is.factor (e.g., “great”, “greater”, “the greatest”)</p>
 <h3><span class="header-section-number">6.6.5</span> Combine selectors<a href="tutorial-advanced-data-management.html#combine-selectors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You can combine selectors, of course. Let’s select all character columns
 and columns that start with “autonomy”.</p>
-<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="tutorial-advanced-data-management.html#cb219-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.character) <span class="sc">|</span> <span class="fu">starts_with</span>(<span class="st">&quot;autonomy&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="tutorial-advanced-data-management.html#cb220-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.character) <span class="sc">|</span> <span class="fu">starts_with</span>(<span class="st">&quot;autonomy&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 1,200 × 3
 ##    employment autonomy_selection autonomy_emphasis
 ##    &lt;chr&gt;                   &lt;dbl&gt;             &lt;dbl&gt;
@@ -1096,7 +1098,7 @@ and columns that start with “autonomy”.</p>
 <h3><span class="header-section-number">6.6.6</span> Reorder your columns with everything()<a href="tutorial-advanced-data-management.html#reorder-your-columns-with-everything" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Finally, you can select <strong>all</strong> columns with <code>everything()</code>. This allows
 you to reorder your columns quickly:</p>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="tutorial-advanced-data-management.html#cb221-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(temp_contract, country, <span class="fu">everything</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="tutorial-advanced-data-management.html#cb222-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">select</span>(temp_contract, country, <span class="fu">everything</span>())</span></code></pre></div>
 <pre><code>## # A tibble: 1,200 × 15
 ##    temp_contract country   reach employment autonomy_selection autonomy_emphasis
 ##    &lt;fct&gt;         &lt;fct&gt;     &lt;fct&gt; &lt;chr&gt;                   &lt;dbl&gt;             &lt;dbl&gt;
@@ -1121,10 +1123,10 @@ you to reorder your columns quickly:</p>
 <p>You can make very advanced row selections by using the function
 <code>str_detect</code> from the <code>stringr</code> package in combination with <code>filter</code>
 from the <code>dplyr</code> package, especially if you combine <code>str_detect</code> with
-regular expressions</p>
+regular expressions.</p>
 <p>Let’s start with partial matching, i.e., when your pattern is <em>part</em> of
 a string, select it:</p>
-<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="tutorial-advanced-data-management.html#cb223-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;Free&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="tutorial-advanced-data-management.html#cb224-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;Free&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 172 × 15
 ##    country   reach employment temp_contract autonomy_selection autonomy_emphasis
 ##    &lt;fct&gt;     &lt;fct&gt; &lt;chr&gt;      &lt;fct&gt;                      &lt;dbl&gt;             &lt;dbl&gt;
@@ -1143,8 +1145,8 @@ a string, select it:</p>
 ## #   ethics_4 &lt;dbl&gt;, work_experience &lt;dbl&gt;, trust_parliament &lt;dbl&gt;,
 ## #   trust_government &lt;dbl&gt;, trust_parties &lt;dbl&gt;, trust_politicians &lt;dbl&gt;</code></pre>
 <p>Note that str_detect is case-sensitive, i.e., it reacts sensitive to
-capitalization. You won’tget a match for “free”:</p>
-<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="tutorial-advanced-data-management.html#cb225-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;free&quot;</span>))</span></code></pre></div>
+capitalization. You won’t get a match for “free”:</p>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="tutorial-advanced-data-management.html#cb226-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;free&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 0 × 15
 ## # ℹ 15 variables: country &lt;fct&gt;, reach &lt;fct&gt;, employment &lt;chr&gt;,
 ## #   temp_contract &lt;fct&gt;, autonomy_selection &lt;dbl&gt;, autonomy_emphasis &lt;dbl&gt;,
@@ -1154,7 +1156,7 @@ capitalization. You won’tget a match for “free”:</p>
 <p>In regex language, you can ask <code>str_detectto</code> look for lowercase and
 uppercase matches, when you are unsure of whether the entries are
 capitalized in your dataset:</p>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="tutorial-advanced-data-management.html#cb227-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;[fF]ree&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="tutorial-advanced-data-management.html#cb228-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;[fF]ree&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 172 × 15
 ##    country   reach employment temp_contract autonomy_selection autonomy_emphasis
 ##    &lt;fct&gt;     &lt;fct&gt; &lt;chr&gt;      &lt;fct&gt;                      &lt;dbl&gt;             &lt;dbl&gt;
@@ -1173,7 +1175,7 @@ capitalized in your dataset:</p>
 ## #   ethics_4 &lt;dbl&gt;, work_experience &lt;dbl&gt;, trust_parliament &lt;dbl&gt;,
 ## #   trust_government &lt;dbl&gt;, trust_parties &lt;dbl&gt;, trust_politicians &lt;dbl&gt;</code></pre>
 <p>You can also ask for matches that end on your pattern:</p>
-<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="tutorial-advanced-data-management.html#cb229-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;time$&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="tutorial-advanced-data-management.html#cb230-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_detect</span>(employment, <span class="st">&quot;time$&quot;</span>))</span></code></pre></div>
 <pre><code>## # A tibble: 1,028 × 15
 ##    country   reach employment temp_contract autonomy_selection autonomy_emphasis
 ##    &lt;fct&gt;     &lt;fct&gt; &lt;chr&gt;      &lt;fct&gt;                      &lt;dbl&gt;             &lt;dbl&gt;
