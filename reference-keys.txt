@@ -145,3 +145,11 @@ function-documentation-with-roxygen2
 automated-code-styling
 styler
 lintr
+setting-global-options-in-r-for-a-customized-workflow
+understanding-options
+turn-off-scientific-notation
+customizing-tibble-display
+resetting-to-default
+printing-more-rows-in-the-console-using-dplyr
+join-without-.x-and-.y-suffixes
+optional-setting-global-options-in-r-for-a-customized-workflow
