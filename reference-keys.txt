@@ -153,3 +153,9 @@ resetting-to-default
 printing-more-rows-in-the-console-using-dplyr
 join-without-.x-and-.y-suffixes
 optional-setting-global-options-in-r-for-a-customized-workflow
+rescaling-of-measures
+reverse_scale
+minmax_scale
+center_scale
+z_scale
+tutorial-data-management-with-dplyr
