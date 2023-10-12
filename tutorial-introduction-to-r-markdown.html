@@ -370,12 +370,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html"><i class="fa fa-check"></i><b>9</b> Tutorial: Introduction to R Markdown</a>
 <ul>
-<li class="chapter" data-level="9.0.1" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#packages-1"><i class="fa fa-check"></i><b>9.0.1</b> Packages</a></li>
-<li class="chapter" data-level="9.0.2" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#creating-a-new-r-markdown-file"><i class="fa fa-check"></i><b>9.0.2</b> Creating a new R Markdown file</a></li>
-<li class="chapter" data-level="9.0.3" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#structure-of-r-markdown-documents"><i class="fa fa-check"></i><b>9.0.3</b> Structure of R Markdown documents</a></li>
-<li class="chapter" data-level="9.0.4" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#rendering-the-document"><i class="fa fa-check"></i><b>9.0.4</b> Rendering the document</a></li>
-<li class="chapter" data-level="9.0.5" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#formatting-the-document"><i class="fa fa-check"></i><b>9.0.5</b> Formatting the document</a></li>
-<li class="chapter" data-level="9.0.6" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#citing-papers-with-zotero"><i class="fa fa-check"></i><b>9.0.6</b> Citing papers with Zotero</a></li>
+<li class="chapter" data-level="9.1" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#packages-1"><i class="fa fa-check"></i><b>9.1</b> Packages</a></li>
+<li class="chapter" data-level="9.2" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#creating-a-new-r-markdown-file"><i class="fa fa-check"></i><b>9.2</b> Creating a new R Markdown file</a></li>
+<li class="chapter" data-level="9.3" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#structure-of-r-markdown-documents"><i class="fa fa-check"></i><b>9.3</b> Structure of R Markdown documents</a></li>
+<li class="chapter" data-level="9.4" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#rendering-the-document"><i class="fa fa-check"></i><b>9.4</b> Rendering the document</a></li>
+<li class="chapter" data-level="9.5" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#formatting-the-document"><i class="fa fa-check"></i><b>9.5</b> Formatting the document</a></li>
+<li class="chapter" data-level="9.6" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#citing-papers-with-zotero"><i class="fa fa-check"></i><b>9.6</b> Citing papers with Zotero</a></li>
+<li class="chapter" data-level="9.7" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#basic-setup-of-an-rmd-script"><i class="fa fa-check"></i><b>9.7</b> Basic setup of an Rmd script</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="tutorial-good-coding-style-project-management.html"><a href="tutorial-good-coding-style-project-management.html"><i class="fa fa-check"></i><b>10</b> Tutorial: Good coding style &amp; project management</a>
 <ul>
@@ -473,129 +474,123 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>know how to set up RMarkdown and Zotero</li>
 <li>know RMarkdown syntax to write papers in R</li>
 </ul>
-<p>R Markdown is a powerful tool for scientists that allows you to
-intermingle code and text in a single document. It’s a versatile R
+<p><strong>R Markdown is a powerful tool for scientists that allows you to intermingle code and text in a single document.</strong> It’s a versatile R
 package that combines the core syntax of markdown (an easy-to-write
-plain text format) with embedded R code chunks, enabling the creation of
-dynamic documents, presentations, dashboards, and even entire books (R
-Markdown supports a variety of output formats, including HTML, PDF,
+plain text format) with embedded R code chunks, enabling the creation of dynamic documents, presentations, dashboards, and even entire books (R Markdown supports a variety of output formats, including HTML, PDF,
 Microsoft Word and MANY more!).</p>
 <p>Developed by Yihui Xie in 2012, and actively maintained by the RStudio
 team, R Markdown was designed to provide a workflow for both
-data analysis and reporting. One of the key features of R Markdown is
-its ability to execute R code chunks in the document and automatically
-capture the output and include it in the final document. This can
-include results of computations, tables, and even graphics generated by
-the R code. R Markdown documents are completely reproducible and can be
-automatically regenerated whenever the underlying data or analysis code
-changes.</p>
+data analysis and reporting. One of the key features of R Markdown is its ability to execute R code chunks in the document and automatically capture the output and include it in the final document. This can <strong>include results of computations, tables, and even graphics generated by the R code. R Markdown documents are completely reproducible and can be automatically regenerated whenever the underlying data or analysis code changes.</strong></p>
 <p>Creating an R Markdown document is an interactive process that combines
 elements of coding, data analysis, and scientific writing. Let’s get
 started.</p>
-<div id="packages-1" class="section level3 hasAnchor" number="9.0.1">
-<h3><span class="header-section-number">9.0.1</span> Packages<a href="tutorial-introduction-to-r-markdown.html#packages-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="packages-1" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Packages<a href="tutorial-introduction-to-r-markdown.html#packages-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Firstly, you’ll need to install the <code>rmarkdown</code> package and its
 dependencies, including <code>knitr</code> for executing code chunks. You can do
 this from within R or RStudio:</p>
-<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="tutorial-introduction-to-r-markdown.html#cb406-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rmarkdown&quot;</span>)</span>
-<span id="cb406-2"><a href="tutorial-introduction-to-r-markdown.html#cb406-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;knitr&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="tutorial-introduction-to-r-markdown.html#cb406-1" tabindex="-1"></a><span class="co"># install.packages(&quot;rmarkdown&quot;) # run only the first time</span></span>
+<span id="cb406-2"><a href="tutorial-introduction-to-r-markdown.html#cb406-2" tabindex="-1"></a><span class="co"># install.packages(&quot;knitr&quot;) # run only the first time</span></span></code></pre></div>
 <div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="tutorial-introduction-to-r-markdown.html#cb407-1" tabindex="-1"></a><span class="fu">library</span>(rmarkdown)</span></code></pre></div>
+<p>In addition, you’ll need a LaTeX installation on your PC / Mac. Some of you might already have installed LaTeX, such as in MiKTeX on Windows. If you don’t, please install <code>tinytex</code> in R:</p>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="tutorial-introduction-to-r-markdown.html#cb408-1" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div>
+<p>We are all clear. Let’s get started!</p>
 </div>
-<div id="creating-a-new-r-markdown-file" class="section level3 hasAnchor" number="9.0.2">
-<h3><span class="header-section-number">9.0.2</span> Creating a new R Markdown file<a href="tutorial-introduction-to-r-markdown.html#creating-a-new-r-markdown-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="creating-a-new-r-markdown-file" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Creating a new R Markdown file<a href="tutorial-introduction-to-r-markdown.html#creating-a-new-r-markdown-file" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You can create a new R Markdown file in RStudio by clicking on
 <code>File &gt; New File &gt; R Markdown...</code> This will open a dialog box where you
 can give the document a title and author, and choose the output format
 (HTML, PDF, or Word).</p>
+<p>Let’s choose “PDF” and provide the title “My first R Markdown document”.</p>
 </div>
-<div id="structure-of-r-markdown-documents" class="section level3 hasAnchor" number="9.0.3">
-<h3><span class="header-section-number">9.0.3</span> Structure of R Markdown documents<a href="tutorial-introduction-to-r-markdown.html#structure-of-r-markdown-documents" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="structure-of-r-markdown-documents" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Structure of R Markdown documents<a href="tutorial-introduction-to-r-markdown.html#structure-of-r-markdown-documents" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>An R Markdown document consists of YAML metadata, markdown text, and R
 code chunks.</p>
 <ul>
 <li><p><strong>YAML Metadata:</strong> This is the section at the top of the document,
-enclosed in —. It contains information like the title, author,
-date, and output format of the document.</p></li>
+enclosed in <code>- - -</code>. It contains information like the title, author, date, and output format of the document.</p></li>
 <li><p><strong>Markdown Text:</strong> Markdown is a simple formatting syntax that
 allows you to include things like headers, links, italics, bullet
 lists, images, etc., in plain text.</p></li>
 <li><p><strong>R Code Chunks:</strong> You can insert R code into your document by
-enclosing it in <code>{r} and</code>.</p></li>
+enclosing it in <code>```{r} ```</code>.</p></li>
 </ul>
-<p>This code chunk would be executed when the document is rendered, and the
-description of the WoJ dataset would be included in the final document.</p>
+<p>This code chunk will be executed when the document is rendered. Let’s test it in the next chapter.</p>
 </div>
-<div id="rendering-the-document" class="section level3 hasAnchor" number="9.0.4">
-<h3><span class="header-section-number">9.0.4</span> Rendering the document<a href="tutorial-introduction-to-r-markdown.html#rendering-the-document" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>To convert your R Markdown document into a final, shareable format, you
-need to ‘render’ it. You can do this in RStudio by clicking the ‘Knit’
-button. You can also use the <code>render()</code> function from the rmarkdown
-package:</p>
-<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="tutorial-introduction-to-r-markdown.html#cb408-1" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">render</span>(<span class="st">&quot;my_document.Rmd&quot;</span>)</span></code></pre></div>
-<p>This will execute all of the R code chunks, convert the markdown text to
-formatted text, and combine everything into a final document.</p>
+<div id="rendering-the-document" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Rendering the document<a href="tutorial-introduction-to-r-markdown.html#rendering-the-document" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Our new RMarkdown document, which you’ve titled “My first R Markdown document”, already includes pre-prepared text and code. To render the document, click on the <code>Knit</code> button (represented by the yarn symbol with a needle) found within your RMarkdown (Rmd) script.</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>How to knit (i.e., render) an RMarkdown document</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/knit.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>If you haven’t saved your RMarkdown (Rmd) script yet, you will be prompted to do so before knitting. In such a case, save your script in your current working directory under the name <code>"my_rmarkdown_document.Rmd"</code> and click <code>knit</code> again.</p>
+<p>During the knitting process, you’ll see a red stop sign on the right-hand side of your console. This indicates that the R compiler is still processing. Once the stop sign disappears, you’ll find a neatly rendered PDF document in your working directory.</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>How to know when the knitting process is finished: Keep an eye on the stop sign</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/stop_sign.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>If you don’t like to use the <code>knit</code> button, you can also use the <code>render()</code> function from the rmarkdown package to render / knit your document:</p>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="tutorial-introduction-to-r-markdown.html#cb409-1" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">render</span>(<span class="st">&quot;my_rmarkdown_document.Rmd&quot;</span>)</span></code></pre></div>
+<p>This will execute all of the R code chunks, convert the markdown text to formatted text, and combine everything into a final PDF document that is saved to your working directory.</p>
 </div>
-<div id="formatting-the-document" class="section level3 hasAnchor" number="9.0.5">
-<h3><span class="header-section-number">9.0.5</span> Formatting the document<a href="tutorial-introduction-to-r-markdown.html#formatting-the-document" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="formatting-the-document" class="section level2 hasAnchor" number="9.5">
+<h2><span class="header-section-number">9.5</span> Formatting the document<a href="tutorial-introduction-to-r-markdown.html#formatting-the-document" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You can format your R Markdown document by using Markdown as a simple
 formatting syntax. This is the basic syntax:</p>
 <ul>
-<li><p>Headers: Use # for a top-level header (H1), ## for H2, up to
-###### for H6. The more #s, the smaller the header.</p></li>
-<li><p>Emphasis: For italic text, wrap words in * or _ , like * italic
+<li><p><strong>Headers:</strong> Use # for a top-level header (H1), ## for H2, up to ###### for H6. The more #s, the smaller the header.</p></li>
+<li><p><strong>Emphasis:</strong> For italic text, wrap words in * or _ , like * italic
 * or _ italic _ . For bold, use double ** or __ , like **
 bold ** or __ bold __.</p></li>
-<li><p>Lists: Use *, -, or + followed by a space for bullet points. For
+<li><p><strong>Lists:</strong> Use *, -, or + followed by a space for bullet points. For
 numbered items, start the line with the number, a period, and a
 space.</p></li>
-<li><p>Links: Wrap the clickable text in square brackets [] and the URL in
-parentheses (), like this but without the space: [Lara Kobike]
-(homepage_url).</p></li>
-<li><p>Images: Similar to links, but prefix the square bracket with an
-exclamation point !, like this but without the space: [Alt text]
-(image_url).</p></li>
-<li><p>Code: Use backticks ` around inline code snippets. For larger
+<li><p><strong>Links:</strong> Wrap the clickable text in square brackets [] and the URL in parentheses (), like this but without the space: <code>[Lara Kobike] (homepage_url)</code>.</p></li>
+<li><p><strong>Images:</strong> Similar to links, but prefix the square bracket with an
+exclamation point !, like this but without the space: <code>![] (image_url)</code>.</p></li>
+<li><p><strong>Code:</strong> Use backticks ` around inline code snippets. For larger
 blocks of code, use triple backticks.</p></li>
-<li><p>Blockquotes: Start the line with a &gt; to create a blockquote.</p></li>
-<li><p>Footnotes: The footnote number is placed inside the square bracket after a caret:
-<code>^[ 4 ]</code>. Then you put the text of the footnote after another caret: <code>^[ 4 ]: This is how a footnote looks like after rednering.</code><a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p></li>
+<li><p><strong>Blockquotes:</strong> Start the line with a &gt; to create a blockquote.</p></li>
+<li><p>Footnotes: The footnote number is placed inside the square bracket after a caret: <code>^[ 4 ]</code>. Then you put the text of the footnote after another caret: <code>^[ 4 ]: This is how a footnote looks like after rendering.</code><a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p></li>
 </ul>
-<p>Finally, you can use this <a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">R Markdown cheat
-sheet</a>
-to quickly learn more.</p>
-<p><strong>Advanced tip:</strong> The <code>bookdown</code> package extends the functionality of
-the <code>rmarkdown</code> package. It can be used to create long and more
-complicated documents. Here is an introduction to <code>bookdown</code> by Benjamin
-Fretwurst, which he created for his students in Zurich (including
-videos):
-<a href="https://www.ikmz.uzh.ch/static/methoden/R_Introduction/forschungsbericht-mit-bookdown.html">Link</a>.”</p>
+<p>Finally, you can use this <a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf">R Markdown cheat sheet</a> to quickly learn more.</p>
+<p><strong>Tip for advanced users:</strong> The <code>bookdown</code> package extends the functionality of the <code>rmarkdown</code> package. It can be used to create long and more complicated documents. Here is an introduction to <code>bookdown</code> by Benjamin Fretwurst, which he created for his students in Zurich (including videos): <a href="https://www.ikmz.uzh.ch/static/methoden/R_Introduction/forschungsbericht-mit-bookdown.html">Link</a>.”</p>
 </div>
-<div id="citing-papers-with-zotero" class="section level3 hasAnchor" number="9.0.6">
-<h3><span class="header-section-number">9.0.6</span> Citing papers with Zotero<a href="tutorial-introduction-to-r-markdown.html#citing-papers-with-zotero" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="citing-papers-with-zotero" class="section level2 hasAnchor" number="9.6">
+<h2><span class="header-section-number">9.6</span> Citing papers with Zotero<a href="tutorial-introduction-to-r-markdown.html#citing-papers-with-zotero" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You can integrate Zotero to cite your sources within an R Markdown
 document. First, you <a href="https://www.zotero.org/">need to download and install
 Zotero</a>. It’s a free, open-source tool that
 helps you collect, organize, cite, and share your research sources.
 After you have Zotero installed, you also need to install an extension
-called <a href="https://retorque.re/zotero-better-bibtex/">Better BibTeX for
-Zotero</a>, which simplifies the
-process of exporting your Zotero libraries in a format that is easy to
-use with R Markdown.</p>
+called <a href="https://retorque.re/zotero-better-bibtex/">Better BibTeX for Zotero</a>, which simplifies the process of exporting your Zotero libraries in a format that is easy to use with R Markdown.</p>
 <p>To install Better BibTeX, open Zotero and follow this path:
 <code>Tools &gt; Add-Ons &gt; Gear Icon &gt; Install Add-On From File…</code>. Then go to
 the folder you downloaded the Better Bibtex file to. Select the
 <code>BetterBibtex.xpi</code> file, click “Install Now” in the Zotero pop-up, and
 follow the system setup.</p>
-<p><strong>Pro tip:</strong> Better BibTeX will create dynamic citation keys from the
-Zotero paper information, and this key may change when you edit the
-paper in Zotero. You can generate a pinned (i.e., fixed) citation key by
-selecting one or more items, right-clicking, and selecting
-<code>Pin BibTeX key</code>, which will add the current citation key to the “extra”
-field, thereby pinning it. If you want to update your citation key
-default style, go to
-<code>Tools &gt; Better BibTex &gt; Open Better BibTex Preferences</code> and enter your
-desired citation key style, e.g. “auth.fold.lower + year”. See this
-screenshot for a visual aid:</p>
+<p><strong>Tip for advanced users:</strong> Better BibTeX will create dynamic citation keys from the Zotero paper information, and this key may change when you edit the paper in Zotero. You can generate a pinned (i.e., fixed) citation key by selecting one or more items, right-clicking, and selecting <code>Pin BibTeX key</code>, which will add the current citation key to the “extra” field, thereby pinning it. If you want to update your citation key default style, go to <code>Tools &gt; Better BibTex &gt; Open Better BibTex Preferences</code> and enter your desired citation key style, e.g. “auth.fold.lower + year”. See this screenshot for a visual aid:</p>
 <table>
 <colgroup>
 <col width="100%" />
@@ -614,7 +609,7 @@ I’ve found is through using the <code>rbbt</code> package <a href="https://dew
 here)</a>.
 However, it’s not hosted on <code>CRAN</code>, so be careful. This package might
 not run stable in the future.</p>
-<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="tutorial-introduction-to-r-markdown.html#cb409-1" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;paleolimbot/rbbt&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="tutorial-introduction-to-r-markdown.html#cb410-1" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;paleolimbot/rbbt&quot;</span>)</span></code></pre></div>
 <p>After installing <code>rbbt</code> and restarting RStudio, go to
 <code>Tools &gt; Modify Keyboard Shortcuts</code>. Search for <code>zotero</code> and click on
 the ‘Shortcut’ field for the ‘Insert Zotero Bibliography from Zotero
@@ -648,17 +643,228 @@ Markdown and into your “references.bib” file. Go in there and hit your
 <code>CNTRL + B</code>). Voilá, you got yourself a bibliography to cite from that
 you can always easily update using <code>CNTRL + B</code>. Save that updated .bib
 file.</p>
-<p>Now, whenever you are in your R Markdown file, you can just type an “@”
-symbol and RStudio will automatically prompt you with the options from
-your .bib file. Choose your reference and hit Enter. This will insert
-the citation key in your R Markdown document, e.g. <code>@smith2023</code>. In the
-actual output, <code>@smith2023</code> will be replaced by a properly formatted
-citation, and a reference list will be automatically generated at the
-end of your document.</p>
+<p>Now, whenever you are in your R Markdown file, you can just type an “@” symbol and RStudio will automatically prompt you with the options from your .bib file. Choose your reference and hit Enter. This will insert the citation key in your R Markdown document, e.g. <code>@smith2023</code>. In the actual output, <code>@smith2023</code> will be replaced by a properly formatted citation, and a reference list will be automatically generated at the end of your document.</p>
 <p>For more details on how to use Zotero with R Markdown, including how to
 specify citation style and how to cite page numbers, see the <a href="https://rstudio.github.io/visual-markdown-editing/citations.html">official
 guide on using Zotero with R
 Markdown</a>.</p>
+</div>
+<div id="basic-setup-of-an-rmd-script" class="section level2 hasAnchor" number="9.7">
+<h2><span class="header-section-number">9.7</span> Basic setup of an Rmd script<a href="tutorial-introduction-to-r-markdown.html#basic-setup-of-an-rmd-script" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Every R(md) script has a similar setup: You load libraries, set some global options, define your working directory, load data, manipulate data and run analyses. In this part of the tutorial, we will turn your <code>my-rmarkdown-document.Rmd</code> into a template for R script setup.</p>
+<p>To do this, we’ll first delete all R Markdown text and create an empty document like this:</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Clear your Rmd script:</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/rmarkdown_document_empty.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>Now we are ready to fill your template document!</p>
+<ol style="list-style-type: decimal">
+<li><strong>Update your YAML header with APA7 information:</strong>
+Install and load the <code>papaja</code> package, which allows to create APA7-styled papers:</li>
+</ol>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="tutorial-introduction-to-r-markdown.html#cb411-1" tabindex="-1"></a><span class="co"># install.packages(&quot;papaja&quot;) # run only the first time</span></span>
+<span id="cb411-2"><a href="tutorial-introduction-to-r-markdown.html#cb411-2" tabindex="-1"></a><span class="fu">library</span>(papaja)</span></code></pre></div>
+<p>Next, copy and paste this new YAML header into your Rmd file:</p>
+<pre class="---"><code>title             : &quot;The title of your paper&quot;
+shorttitle        : &quot;Short title for the header&quot;
+
+author: 
+  - name          : &quot;First Author&quot;
+    affiliation   : &quot;Department, University&quot;
+    corresponding : yes    # Set to &#39;yes&#39; if this is the corresponding author
+    address       : &quot;Street, City, Country&quot;
+    email         : &quot;first.author@email.com&quot;
+
+  - name          : &quot;Second Author&quot;
+    affiliation   : &quot;Department, University&quot;
+
+abstract          : |
+  This is the abstract of the paper.
+  
+keywords          : &quot;keyword1, keyword2, keyword3&quot;
+wordcount         : &quot;X&quot;
+
+figsintext        : no
+figurelist        : no
+
+output: 
+  papaja::apa6_pdf:
+    latex_engine  : xelatex
+    keep_tex      : true
+---</code></pre>
+<p>This is what your Rmd document should look like:</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Set up a APA7 YAML header in Rmd:</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/yaml_header.png" /></td>
+</tr>
+</tbody>
+</table>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Load libraries:</strong>
+It’s customary to start your script by loading the required libraries. These are be some of the libraries that you might like to use:</li>
+</ol>
+<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="tutorial-introduction-to-r-markdown.html#cb413-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb413-2"><a href="tutorial-introduction-to-r-markdown.html#cb413-2" tabindex="-1"></a><span class="fu">library</span>(tidycomm)</span>
+<span id="cb413-3"><a href="tutorial-introduction-to-r-markdown.html#cb413-3" tabindex="-1"></a><span class="fu">library</span>(rstudioapi)</span></code></pre></div>
+<p>This is what your Rmd document should look like:</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Set up your libraries in Rmd:</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/load_libraries.png" /></td>
+</tr>
+</tbody>
+</table>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Setting global options</strong>
+At times, you’ll want to establish certain options that apply throughout your R(md) file. You’ve already learned about these options in the tutorial: <a href="tutorial-installing-understanding-rr-studio.html#optional-setting-global-options-in-r-for-a-customized-workflow">Optional: Setting global options in R for a customized workflow</a>.</li>
+</ol>
+<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="tutorial-introduction-to-r-markdown.html#cb414-1" tabindex="-1"></a><span class="co"># Set global options for the display of output &amp; calculations</span></span>
+<span id="cb414-2"><a href="tutorial-introduction-to-r-markdown.html#cb414-2" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>) <span class="co"># turns off scientific notation</span></span>
+<span id="cb414-3"><a href="tutorial-introduction-to-r-markdown.html#cb414-3" tabindex="-1"></a><span class="fu">options</span>(<span class="at">pillar.sigfig =</span> <span class="dv">2</span>) <span class="co"># desired number of decimal points in tibbles</span></span></code></pre></div>
+<p>In addition to setting these global options for displaying output in tibbles, you may also want to control how your code chunks render in the PDF. For example, you might wish to set the size of figures that appear in your rendered document:</p>
+<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="tutorial-introduction-to-r-markdown.html#cb415-1" tabindex="-1"></a><span class="co"># Set options for rendering code chunks</span></span>
+<span id="cb415-2"><a href="tutorial-introduction-to-r-markdown.html#cb415-2" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb415-3"><a href="tutorial-introduction-to-r-markdown.html#cb415-3" tabindex="-1"></a>  <span class="at">echo =</span> <span class="cn">TRUE</span>,         <span class="co"># show code in output, this is usually turned off when you hand in your publications for review</span></span>
+<span id="cb415-4"><a href="tutorial-introduction-to-r-markdown.html#cb415-4" tabindex="-1"></a>  <span class="at">message =</span> <span class="cn">FALSE</span>,     <span class="co"># suppress messages (the smaller siblings of warnings that give you additional information on your console output)</span></span>
+<span id="cb415-5"><a href="tutorial-introduction-to-r-markdown.html#cb415-5" tabindex="-1"></a>  <span class="at">warning =</span> <span class="cn">FALSE</span>,     <span class="co"># suppress all warnings</span></span>
+<span id="cb415-6"><a href="tutorial-introduction-to-r-markdown.html#cb415-6" tabindex="-1"></a>  <span class="at">fig.width =</span> <span class="dv">6</span>,       <span class="co"># figure width in inch</span></span>
+<span id="cb415-7"><a href="tutorial-introduction-to-r-markdown.html#cb415-7" tabindex="-1"></a>  <span class="at">fig.height =</span> <span class="dv">4</span>       <span class="co"># figure height in inch</span></span>
+<span id="cb415-8"><a href="tutorial-introduction-to-r-markdown.html#cb415-8" tabindex="-1"></a>  )</span></code></pre></div>
+<p>This is what your Rmd document should look like:</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Set up your options in Rmd:</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/set_options.png" /></td>
+</tr>
+</tbody>
+</table>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Setting the working directory</strong>
+Next, set your working directory with soft coding:</li>
+</ol>
+<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb416-1"><a href="tutorial-introduction-to-r-markdown.html#cb416-1" tabindex="-1"></a><span class="co"># Set working directory</span></span>
+<span id="cb416-2"><a href="tutorial-introduction-to-r-markdown.html#cb416-2" tabindex="-1"></a><span class="fu">setwd</span>(<span class="fu">dirname</span>(rstudioapi<span class="sc">::</span><span class="fu">getSourceEditorContext</span>()<span class="sc">$</span>path))</span></code></pre></div>
+<p>This is what your Rmd document should look like:</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Set up your working directory in Rmd:</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/set_wd.png" /></td>
+</tr>
+</tbody>
+</table>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Load data:</strong>
+Now, you’ll load your data from your working directory.</li>
+</ol>
+<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="tutorial-introduction-to-r-markdown.html#cb417-1" tabindex="-1"></a><span class="co"># Load data</span></span>
+<span id="cb417-2"><a href="tutorial-introduction-to-r-markdown.html#cb417-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;WoJ_names.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>This is what your Rmd document should look like:</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Load data in Rmd:</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/load_data.png" /></td>
+</tr>
+</tbody>
+</table>
+<ol start="5" style="list-style-type: decimal">
+<li><strong>Write content:</strong>
+We made it to the end of this tutorial! This is were you can start writing your fully reproducible paper! :) You can write stuff like this:</li>
+</ol>
+<pre><code>With this preamble, we are all set. You can write your paper here using R Markdown syntax.
+
+# Theory
+This is my theory section.
+
+## Sub-Theory 1
+This is the first sub-section of my theory section.
+
+## Sub-Theory 2
+This is the second sub-section of my theory section.
+
+# Method
+This is my method section. But I need to refer back to my [Theory] section to show you how to do it. In addition, I&#39;ll set this [link](https://www.ifkw.uni-muenchen.de/index.html) to our department&#39;s website. Really strange method section.
+
+# Results
+Let&#39;s create some results for your paper! Remember to set `eval=TRUE, echo=FALSE` for the code chunks in your results section. This is the only way your calculations and figures will be displayed in the final paper. Let&#39;s first create our table with descriptive statistics of work experience by country. Note that this table isn&#39;t publication-ready. To create publication-ready tables, use the [`sjPlot`](https://cran.r-project.org/web/packages/sjPlot/index.html) package or wait for relevant updates to `tidycomm`.
+</code></pre>
+<p>{r, eval=TRUE, echo=FALSE}
+data %&gt;%
+group_by(country) %&gt;%
+summarize(M = mean(work_experience, na.rm=TRUE),
+SD = sd(work_experience, na.rm=TRUE))</p>
+<pre><code>
+Next, we&#39;ll plot a publication-ready graph.
+</code></pre>
+<p>{r, eval=TRUE, echo=FALSE,}
+data %&gt;%
+ggplot(aes(x = country, y = work_experience)) +
+geom_boxplot() +
+theme_bw() +
+labs(x = ““, y =”Work Experience (Years)“, title =”Distribution of Work Experience by Country”)</p>
+<pre><code>
+Now you only need to render this document to see the results. Or hit the green play button that you can see on the right-hand side of every code chunk.</code></pre>
+<p>This is what your Rmd document should look like:</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left"><em>Set up your working directory in Rmd:</em></td>
+</tr>
+<tr class="even">
+<td align="left"><img src="images/text_rmd.png" /></td>
+</tr>
+</tbody>
+</table>
+<ol start="6" style="list-style-type: decimal">
+<li><strong>Final Notes:</strong></li>
+</ol>
+<ul>
+<li>Chunk options can be modified for individual chunks by adjusting them at the start of a chunk. For instance, if warnings need to be shown for a specific chunk, set <code>warning = TRUE</code> for it.</li>
+<li>It’s a practical approach to store your Rmd files and associated data in the same directory, ensuring absolute paths aren’t needed when loading data.</li>
+<li>Lastly, remember to knit your Rmd file regularly to produce the final output in your preferred format (HTML, PDF, or Word).</li>
+</ul>
 </div>
 </div>
 <div class="footnotes">

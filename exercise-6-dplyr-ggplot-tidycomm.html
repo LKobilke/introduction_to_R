@@ -370,12 +370,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html"><i class="fa fa-check"></i><b>9</b> Tutorial: Introduction to R Markdown</a>
 <ul>
-<li class="chapter" data-level="9.0.1" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#packages-1"><i class="fa fa-check"></i><b>9.0.1</b> Packages</a></li>
-<li class="chapter" data-level="9.0.2" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#creating-a-new-r-markdown-file"><i class="fa fa-check"></i><b>9.0.2</b> Creating a new R Markdown file</a></li>
-<li class="chapter" data-level="9.0.3" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#structure-of-r-markdown-documents"><i class="fa fa-check"></i><b>9.0.3</b> Structure of R Markdown documents</a></li>
-<li class="chapter" data-level="9.0.4" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#rendering-the-document"><i class="fa fa-check"></i><b>9.0.4</b> Rendering the document</a></li>
-<li class="chapter" data-level="9.0.5" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#formatting-the-document"><i class="fa fa-check"></i><b>9.0.5</b> Formatting the document</a></li>
-<li class="chapter" data-level="9.0.6" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#citing-papers-with-zotero"><i class="fa fa-check"></i><b>9.0.6</b> Citing papers with Zotero</a></li>
+<li class="chapter" data-level="9.1" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#packages-1"><i class="fa fa-check"></i><b>9.1</b> Packages</a></li>
+<li class="chapter" data-level="9.2" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#creating-a-new-r-markdown-file"><i class="fa fa-check"></i><b>9.2</b> Creating a new R Markdown file</a></li>
+<li class="chapter" data-level="9.3" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#structure-of-r-markdown-documents"><i class="fa fa-check"></i><b>9.3</b> Structure of R Markdown documents</a></li>
+<li class="chapter" data-level="9.4" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#rendering-the-document"><i class="fa fa-check"></i><b>9.4</b> Rendering the document</a></li>
+<li class="chapter" data-level="9.5" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#formatting-the-document"><i class="fa fa-check"></i><b>9.5</b> Formatting the document</a></li>
+<li class="chapter" data-level="9.6" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#citing-papers-with-zotero"><i class="fa fa-check"></i><b>9.6</b> Citing papers with Zotero</a></li>
+<li class="chapter" data-level="9.7" data-path="tutorial-introduction-to-r-markdown.html"><a href="tutorial-introduction-to-r-markdown.html#basic-setup-of-an-rmd-script"><i class="fa fa-check"></i><b>9.7</b> Basic setup of an Rmd script</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="tutorial-good-coding-style-project-management.html"><a href="tutorial-good-coding-style-project-management.html"><i class="fa fa-check"></i><b>10</b> Tutorial: Good coding style &amp; project management</a>
 <ul>
@@ -471,6 +472,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>After working through Exercise 6, you’ll…</strong></p>
 <ul>
 <li>have repeated the most important functions of <code>dplyr</code> and <code>ggplot2</code></li>
+<li>alternatively, you’ll have repeatedsome helpful function from <code>tidycomm</code></li>
 </ul>
 <p>In this exercise, we will work with the <code>mtcars</code> data that comes pre-installed with <code>dplyr</code>.</p>
 <div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -478,10 +480,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb404-3"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-3" tabindex="-1"></a>data <span class="ot">&lt;-</span> mtcars</span>
 <span id="cb404-4"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-4" tabindex="-1"></a></span>
 <span id="cb404-5"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-5" tabindex="-1"></a><span class="co"># To make the data somewhat more interesting, let&#39;s set a few values to missing values (you don&#39;t need to know this code):</span></span>
-<span id="cb404-6"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-6" tabindex="-1"></a>data<span class="sc">$</span>wt <span class="ot">&lt;-</span> <span class="fu">na_if</span>(data<span class="sc">$</span>wt, <span class="fl">4.070</span>)</span>
-<span id="cb404-7"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-7" tabindex="-1"></a>data<span class="sc">$</span>mpg <span class="ot">&lt;-</span> <span class="fu">na_if</span>(data<span class="sc">$</span>mpg, <span class="fl">22.8</span>)</span></code></pre></div>
-<p>Let’s first get to know this data. We can get some information about the
-variables that are included in the dataset by using <code>R</code>s <code>help()</code>
+<span id="cb404-6"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-6" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb404-7"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-7" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">wt =</span> <span class="fu">na_if</span>(wt, <span class="fl">4.070</span>))</span>
+<span id="cb404-8"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-8" tabindex="-1"></a></span>
+<span id="cb404-9"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-9" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb404-10"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-10" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mpg =</span> <span class="fu">na_if</span>(mpg, <span class="fl">22.8</span>))</span></code></pre></div>
+<p>Let’s first get to know this data. We can get some information about the variables that are included in the dataset by using <code>R</code>s <code>help()</code>
 function:</p>
 <div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb405-1" tabindex="-1"></a><span class="fu">help</span>(mtcars)</span></code></pre></div>
 <table>
@@ -497,14 +501,12 @@ function:</p>
 </tr>
 </tbody>
 </table>
-<p>We get to know that this is a data set was created from the <em>1974 Motor
-Trend US magazine</em>, and that it comprises fuel consumption (<em>mpg</em>) and
+<p>We get to know that this is a data set was created from the <em>1974 Motor Trend US magazine</em>, and that it comprises fuel consumption (<em>mpg</em>) and
 10 other aspects (<em>cyl</em>, <em>wt</em>) of automobile design and performance for
 32 different cars.</p>
 <div id="task-1-5" class="section level2 unnumbered hasAnchor">
 <h2>Task 1<a href="exercise-6-dplyr-ggplot-tidycomm.html#task-1-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Check the dataset for missing values (<em>NA</em>s) and delete all observations
-that have missing values.</p>
+<p>Check the dataset for missing values (<em>NA</em>s) and delete all observations that have missing values.</p>
 </div>
 <div id="task-2-5" class="section level2 unnumbered hasAnchor">
 <h2>Task 2<a href="exercise-6-dplyr-ggplot-tidycomm.html#task-2-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -546,8 +548,7 @@ divides the cars in three groups: light, medium, and heavy cars.</p>
 <h2>Task 7<a href="exercise-6-dplyr-ggplot-tidycomm.html#task-7-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Make a scatter plot to indicate how many km per liter (<em>mpg</em>) a car can
 drive depending on its weight (<em>wt</em>). Facet the plot by weight class
-(<em>wt_cat</em>). Try to hide the plot legend (you have learned that in
-Exercise 3, Task 1).</p>
+(<em>wt_cat</em>). Try to hide the plot legend with <code>+ theme(legend.position = "none")</code>.</p>
 </div>
 <div id="task-8" class="section level2 unnumbered hasAnchor">
 <h2>Task 8<a href="exercise-6-dplyr-ggplot-tidycomm.html#task-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
