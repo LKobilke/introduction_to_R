@@ -809,7 +809,7 @@ the plot.</p>
 <p><em>Solution:</em></p>
 <div class="sourceCode" id="cb484"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb484-1"><a href="solutions.html#cb484-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians)) <span class="sc">+</span></span>
 <span id="cb484-2"><a href="solutions.html#cb484-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-295-1.png" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-296-1.png" width="672" /></p>
 </div>
 <div id="task-2-9" class="section level3 unnumbered hasAnchor">
 <h3>Task 2<a href="solutions.html#task-2-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -821,7 +821,7 @@ this code to your plot to create a regression line:
 <div class="sourceCode" id="cb485"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb485-1"><a href="solutions.html#cb485-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians)) <span class="sc">+</span></span>
 <span id="cb485-2"><a href="solutions.html#cb485-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb485-3"><a href="solutions.html#cb485-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-296-1.png" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-297-1.png" width="672" /></p>
 <p>The regression line shows us that there is no relationship between work
 experience and trust in politicians. In other words, more experienced
 journalists <strong>do not</strong> become less trusting in politicians.</p>
@@ -839,7 +839,7 @@ specific country context?</p>
 <span id="cb486-2"><a href="solutions.html#cb486-2" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb486-3"><a href="solutions.html#cb486-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb486-4"><a href="solutions.html#cb486-4" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>country)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-297-1.png" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-298-1.png" width="672" /></p>
 </div>
 <div id="task-4-5" class="section level3 unnumbered hasAnchor">
 <h3>Task 4<a href="solutions.html#task-4-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -850,13 +850,13 @@ illustrates these differences across countries more distinctly.</p>
 you with this graph:</p>
 <div class="sourceCode" id="cb487"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb487-1"><a href="solutions.html#cb487-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians)) <span class="sc">+</span></span>
 <span id="cb487-2"><a href="solutions.html#cb487-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-298-1.png" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-299-1.png" width="672" /></p>
 <p>Now, display every country in a separate color by using the <code>color</code>
 argument inside the <code>aes()</code> function.</p>
 <p><em>Solution:</em></p>
 <div class="sourceCode" id="cb488"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb488-1"><a href="solutions.html#cb488-1" tabindex="-1"></a>WoJ <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> work_experience, <span class="at">y =</span> trust_politicians, <span class="at">color =</span> country)) <span class="sc">+</span></span>
 <span id="cb488-2"><a href="solutions.html#cb488-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-299-1.png" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-300-1.png" width="672" /></p>
 </div>
 <div id="task-5-5" class="section level3 unnumbered hasAnchor">
 <h3>Task 5<a href="solutions.html#task-5-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -874,7 +874,7 @@ Scale”. The label for the color legend should be “Country”.</p>
 <span id="cb489-6"><a href="solutions.html#cb489-6" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Years of Work Experience in Journalism&quot;</span>,</span>
 <span id="cb489-7"><a href="solutions.html#cb489-7" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;Country&quot;</span></span>
 <span id="cb489-8"><a href="solutions.html#cb489-8" tabindex="-1"></a>  )</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-300-1.png" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-301-1.png" width="672" /></p>
 </div>
 <div id="task-6-4" class="section level3 unnumbered hasAnchor">
 <h3>Task 6<a href="solutions.html#task-6-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -890,7 +890,7 @@ Scale”. The label for the color legend should be “Country”.</p>
 <span id="cb490-7"><a href="solutions.html#cb490-7" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;Country&quot;</span></span>
 <span id="cb490-8"><a href="solutions.html#cb490-8" tabindex="-1"></a>  ) <span class="sc">+</span></span>
 <span id="cb490-9"><a href="solutions.html#cb490-9" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-301-1.png" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-302-1.png" width="672" /></p>
 </div>
 </div>
 <div id="solutions-for-exercise-5" class="section level2 unnumbered hasAnchor">
@@ -902,7 +902,7 @@ Scale”. The label for the color legend should be “Country”.</p>
 <span id="cb491-2"><a href="solutions.html#cb491-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
 <span id="cb491-3"><a href="solutions.html#cb491-3" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb491-4"><a href="solutions.html#cb491-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Work Experience (Years)&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Distribution of Work Experience by Country&quot;</span>)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-302-1.png" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-303-1.png" width="672" /></p>
 </div>
 <div id="task-2-10" class="section level3 unnumbered hasAnchor">
 <h3>Task 2<a href="solutions.html#task-2-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -912,7 +912,7 @@ Scale”. The label for the color legend should be “Country”.</p>
 <span id="cb492-3"><a href="solutions.html#cb492-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb492-4"><a href="solutions.html#cb492-4" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb492-5"><a href="solutions.html#cb492-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Work Experience (Years)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Trust in Government&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Trust in Government by Work Experience and Country&quot;</span>)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-303-1.png" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-304-1.png" width="672" /></p>
 </div>
 <div id="task-3-10" class="section level3 unnumbered hasAnchor">
 <h3>Task 3<a href="solutions.html#task-3-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -923,7 +923,7 @@ Scale”. The label for the color legend should be “Country”.</p>
 <span id="cb493-4"><a href="solutions.html#cb493-4" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> name), <span class="at">check_overlap =</span> <span class="cn">TRUE</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
 <span id="cb493-5"><a href="solutions.html#cb493-5" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb493-6"><a href="solutions.html#cb493-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Work Experience (Years)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Trust in Government&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Trust in Government by Work Experience and Country&quot;</span>)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-304-1.png" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-305-1.png" width="672" /></p>
 </div>
 <div id="task-4-6" class="section level3 unnumbered hasAnchor">
 <h3>Task 4<a href="solutions.html#task-4-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -933,7 +933,7 @@ Scale”. The label for the color legend should be “Country”.</p>
 <span id="cb494-3"><a href="solutions.html#cb494-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
 <span id="cb494-4"><a href="solutions.html#cb494-4" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb494-5"><a href="solutions.html#cb494-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Employment Type&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Employment Types by Country&quot;</span>)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-305-1.png" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-306-1.png" width="672" /></p>
 <p><em>Alternative Solution:</em> Those who prefer the width of the bars to be
 aligned can use this code:</p>
 <div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb495-1"><a href="solutions.html#cb495-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
@@ -941,7 +941,7 @@ aligned can use this code:</p>
 <span id="cb495-3"><a href="solutions.html#cb495-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">preserve =</span> <span class="st">&quot;single&quot;</span>)) <span class="sc">+</span></span>
 <span id="cb495-4"><a href="solutions.html#cb495-4" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb495-5"><a href="solutions.html#cb495-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Employment Type&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Employment Types by Country&quot;</span>)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-306-1.png" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-307-1.png" width="672" /></p>
 </div>
 <div id="task-5-6" class="section level3 unnumbered hasAnchor">
 <h3>Task 5<a href="solutions.html#task-5-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -964,7 +964,7 @@ separate step:</p>
 <span id="cb496-12"><a href="solutions.html#cb496-12" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Employment Type&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Employment Types by Country and Level of Experience&quot;</span>) <span class="sc">+</span></span>
 <span id="cb496-13"><a href="solutions.html#cb496-13" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>experience_level) <span class="sc">+</span></span>
 <span id="cb496-14"><a href="solutions.html#cb496-14" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-307-1.png" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-308-1.png" width="672" /></p>
 <p>The more elegant solution is to perform your data management in one go
 without saving the variable experience_level back into your original
 data set. Using this approach will help declutter your data because you
@@ -982,7 +982,7 @@ single visualization:</p>
 <span id="cb497-10"><a href="solutions.html#cb497-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Employment Type&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Employment Types by Country and Level of Experience&quot;</span>) <span class="sc">+</span></span>
 <span id="cb497-11"><a href="solutions.html#cb497-11" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>experience_level) <span class="sc">+</span></span>
 <span id="cb497-12"><a href="solutions.html#cb497-12" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-308-1.png" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-309-1.png" width="672" /></p>
 </div>
 </div>
 <div id="solutions-for-exercise-6" class="section level2 unnumbered hasAnchor">
@@ -1146,7 +1146,7 @@ drive depending on its weight (<em>wt</em>). Facet the plot by weight class
 <span id="cb518-6"><a href="solutions.html#cb518-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
 <span id="cb518-7"><a href="solutions.html#cb518-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relationship between car weight and</span><span class="sc">\n</span><span class="st"> achieved kilometers per liter&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Weight in 1000kg&quot;</span>, <span class="at">y =</span> <span class="st">&quot;km/l&quot;</span>) <span class="sc">+</span></span>
 <span id="cb518-8"><a href="solutions.html#cb518-8" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>wt_cat)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-322-1.png" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-323-1.png" width="672" /></p>
 <p>Alternatively, you can use <code>tidycomm</code>:</p>
 <div class="sourceCode" id="cb519"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb519-1"><a href="solutions.html#cb519-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
 <span id="cb519-2"><a href="solutions.html#cb519-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">wt_cat =</span> <span class="fu">factor</span>(wt_cat, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;light car&quot;</span>, <span class="st">&quot;medium car&quot;</span>, <span class="st">&quot;heavy car&quot;</span>))) <span class="sc">%&gt;%</span></span>
@@ -1155,7 +1155,7 @@ drive depending on its weight (<em>wt</em>). Facet the plot by weight class
 <span id="cb519-5"><a href="solutions.html#cb519-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relationship between car weight and</span><span class="sc">\n</span><span class="st"> achieved kilometers per liter&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Weight in 1000kg&quot;</span>, <span class="at">y =</span> <span class="st">&quot;km/l&quot;</span>) <span class="sc">+</span></span>
 <span id="cb519-6"><a href="solutions.html#cb519-6" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb519-7"><a href="solutions.html#cb519-7" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>wt_cat)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-323-1.png" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-324-1.png" width="672" /></p>
 </div>
 <div id="task-8-1" class="section level3 unnumbered hasAnchor">
 <h3>Task 8<a href="solutions.html#task-8-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1171,7 +1171,7 @@ between 1.4613636 and 1.5636364 *1000kg from it.</p>
 <span id="cb520-7"><a href="solutions.html#cb520-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
 <span id="cb520-8"><a href="solutions.html#cb520-8" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relationship between car weight and</span><span class="sc">\n</span><span class="st"> achieved kilometers per liter&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Weight in 1000kg&quot;</span>, <span class="at">y =</span> <span class="st">&quot;km/l&quot;</span>) <span class="sc">+</span></span>
 <span id="cb520-9"><a href="solutions.html#cb520-9" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>wt_cat)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-324-1.png" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-325-1.png" width="672" /></p>
 <p>With <code>tidycomm</code>:</p>
 <div class="sourceCode" id="cb521"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb521-1"><a href="solutions.html#cb521-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
 <span id="cb521-2"><a href="solutions.html#cb521-2" tabindex="-1"></a>  <span class="fu">filter</span>(wt <span class="sc">&lt;</span> <span class="fl">1.4613636</span> <span class="sc">|</span> wt <span class="sc">&gt;</span> <span class="fl">1.5636364</span>) <span class="sc">%&gt;%</span></span>
@@ -1181,7 +1181,7 @@ between 1.4613636 and 1.5636364 *1000kg from it.</p>
 <span id="cb521-6"><a href="solutions.html#cb521-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relationship between car weight and</span><span class="sc">\n</span><span class="st"> achieved kilometers per liter&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Weight in 1000kg&quot;</span>, <span class="at">y =</span> <span class="st">&quot;km/l&quot;</span>) <span class="sc">+</span></span>
 <span id="cb521-7"><a href="solutions.html#cb521-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb521-8"><a href="solutions.html#cb521-8" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>wt_cat)</span></code></pre></div>
-<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-325-1.png" width="672" /></p>
+<p><img src="Intro-to-R_files/figure-html/unnamed-chunk-326-1.png" width="672" /></p>
 <p><strong>Why would we use <code>data %&gt;% filter(wt &lt; 1.4613636 | wt &gt; 1.5636364)</code>
 instead of <code>data %&gt;% filter(wt &gt; 1.4613636 | wt &lt; 1.5636364)</code>?</strong></p>
 <p>Let’s look at the resulting data sets when you apply those filters to
