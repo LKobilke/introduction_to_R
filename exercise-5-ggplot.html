@@ -23,7 +23,7 @@
 <meta name="author" content="Lara Kobilke, IfKW, Ludwig-Maximilians-Universität München" />
 
 
-<meta name="date" content="2023-10-11" />
+<meta name="date" content="2023-10-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -331,11 +331,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html"><i class="fa fa-check"></i>Exercise 5: ggplot</a>
 <ul>
-<li class="chapter" data-level="7.8" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-1-4"><i class="fa fa-check"></i><b>7.8</b> Task 1</a></li>
-<li class="chapter" data-level="7.9" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-2-4"><i class="fa fa-check"></i><b>7.9</b> Task 2</a></li>
-<li class="chapter" data-level="7.10" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-3-4"><i class="fa fa-check"></i><b>7.10</b> Task 3</a></li>
-<li class="chapter" data-level="7.11" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-4-2"><i class="fa fa-check"></i><b>7.11</b> Task 4</a></li>
-<li class="chapter" data-level="7.12" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-5-2"><i class="fa fa-check"></i><b>7.12</b> Task 5</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-1-4"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-2-4"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-3-4"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-4-2"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-5-2"><i class="fa fa-check"></i>Task 5</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html"><i class="fa fa-check"></i><b>8</b> Tutorial: Data analysis with tidycomm</a>
 <ul>
@@ -473,8 +473,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>be able to see a graph and recreate it with <code>ggplot2</code></li>
 <li>be able to see a problem and customize any type of plot with <code>dplyr</code> &amp; <code>ggplot2</code> to solve it</li>
 </ul>
-<div id="task-1-4" class="section level2 hasAnchor" number="7.8">
-<h2><span class="header-section-number">7.8</span> Task 1<a href="exercise-5-ggplot.html#task-1-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="task-1-4" class="section level2 unnumbered hasAnchor">
+<h2>Task 1<a href="exercise-5-ggplot.html#task-1-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Please set your working directory and load the WoJ_names.csv.</p>
 <div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="exercise-5-ggplot.html#cb282-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;C:/Users/LaraK/Documents/IPR/&quot;</span>)</span>
 <span id="cb282-2"><a href="exercise-5-ggplot.html#cb282-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;WoJ_names.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
@@ -488,54 +488,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 in years for each country in the dataset:</p>
 <ul>
 <li>Assign country to the x-axis and work_experience to the y-axis.</li>
-<li>Use the <code>geom_boxplot()</code> functionto generate a box plot.</li>
+<li>Use the <code>geom_boxplot()</code> function to generate a box plot.</li>
 <li>Choose an appropriate theme.</li>
-<li>Label the axes and the title appropriately using labs().</li>
+<li>Label the axes and the title appropriately using <code>labs()</code>.</li>
 </ul>
 <p><img src="Intro-to-R_files/figure-html/unnamed-chunk-180-1.png" width="672" /></p>
 </div>
-<div id="task-2-4" class="section level2 hasAnchor" number="7.9">
-<h2><span class="header-section-number">7.9</span> Task 2<a href="exercise-5-ggplot.html#task-2-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="task-2-4" class="section level2 unnumbered hasAnchor">
+<h2>Task 2<a href="exercise-5-ggplot.html#task-2-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Look at this graph and try to recreate it.</p>
 <p><img src="Intro-to-R_files/figure-html/unnamed-chunk-181-1.png" width="672" /></p>
 </div>
-<div id="task-3-4" class="section level2 hasAnchor" number="7.10">
-<h2><span class="header-section-number">7.10</span> Task 3<a href="exercise-5-ggplot.html#task-3-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="task-3-4" class="section level2 unnumbered hasAnchor">
+<h2>Task 3<a href="exercise-5-ggplot.html#task-3-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Try to create an advanced version of your graph from Task 2 that shows
 the names of the journalists. You can use the geom_text function for the
 labels, like this:</p>
 <div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="exercise-5-ggplot.html#cb284-1" tabindex="-1"></a><span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> name), <span class="at">check_overlap =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<pre><code>## mapping: label = ~name 
-## geom_text: parse = FALSE, check_overlap = TRUE, na.rm = FALSE
-## stat_identity: na.rm = FALSE
-## position_identity</code></pre>
 <p>If you’d like to adjust the position of the labels, you can add the
 argument <code>, hjust = 0, vjust = 0</code> to this command, like this:</p>
-<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="exercise-5-ggplot.html#cb286-1" tabindex="-1"></a><span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> name), <span class="at">check_overlap =</span> <span class="cn">TRUE</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="dv">0</span>)</span></code></pre></div>
-<pre><code>## mapping: label = ~name 
-## geom_text: parse = FALSE, check_overlap = TRUE, na.rm = FALSE
-## stat_identity: na.rm = FALSE
-## position_identity</code></pre>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="exercise-5-ggplot.html#cb285-1" tabindex="-1"></a><span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> name), <span class="at">check_overlap =</span> <span class="cn">TRUE</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="dv">0</span>)</span></code></pre></div>
 </div>
-<div id="task-4-2" class="section level2 hasAnchor" number="7.11">
-<h2><span class="header-section-number">7.11</span> Task 4<a href="exercise-5-ggplot.html#task-4-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Next, try to recreate this bar plot. Use <code>geom_bar</code> to create it.</p>
-<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="exercise-5-ggplot.html#cb288-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
-<span id="cb288-2"><a href="exercise-5-ggplot.html#cb288-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">fill =</span> employment)) <span class="sc">+</span></span>
-<span id="cb288-3"><a href="exercise-5-ggplot.html#cb288-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
-<span id="cb288-4"><a href="exercise-5-ggplot.html#cb288-4" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb288-5"><a href="exercise-5-ggplot.html#cb288-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Country&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;Employment Type&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Employment Types by Country&quot;</span>)</span></code></pre></div>
+<div id="task-4-2" class="section level2 unnumbered hasAnchor">
+<h2>Task 4<a href="exercise-5-ggplot.html#task-4-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Next, try to recreate this bar plot. Use <code>geom_bar(position = "dodge")</code> to create it because <code>dodge</code>produces the graph below whereas <code>geom_bar(position = "stack")</code> will create a stacked bar chart.</p>
 <p><img src="Intro-to-R_files/figure-html/unnamed-chunk-184-1.png" width="672" /></p>
 </div>
-<div id="task-5-2" class="section level2 hasAnchor" number="7.12">
-<h2><span class="header-section-number">7.12</span> Task 5<a href="exercise-5-ggplot.html#task-5-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="task-5-2" class="section level2 unnumbered hasAnchor">
+<h2>Task 5<a href="exercise-5-ggplot.html#task-5-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Try to create an advanced version of the graph from Task 4.</p>
 <p>First, create a new variable ‘experience_level’ that categorizes the
-‘work_experience’ into three groups: - “Junior” for work_experience &lt;=
-10 - “Mid-Level” for work_experience &gt; 10 &amp; &lt;= 20 - “Senior” for
-work_experience &gt; 20</p>
-<p>Next, use the new variable ‘experience_level’ to create separate graphs
-for juniors, mid-level staff, and seniors.</p>
+‘work_experience’ into three groups:</p>
+<ul>
+<li>“Junior” for work_experience &lt;= 10</li>
+<li>“Mid-Level” for work_experience &gt; 10 &amp; &lt;= 20</li>
+<li>“Senior” for work_experience &gt; 20</li>
+</ul>
+<p>Next, use the new variable ‘experience_level’ to create separate graphs for juniors, mid-level staff, and seniors.</p>
 <p>Note: To make the graph look better, you should rotate the x-axis labels
 and move the labels a bit more to the bottom of the graph. You can use
 the <code>theme()</code> function and adjust the <code>axis.text.x</code> argument. In this

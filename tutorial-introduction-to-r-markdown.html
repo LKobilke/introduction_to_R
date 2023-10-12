@@ -23,7 +23,7 @@
 <meta name="author" content="Lara Kobilke, IfKW, Ludwig-Maximilians-Universität München" />
 
 
-<meta name="date" content="2023-10-11" />
+<meta name="date" content="2023-10-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -331,11 +331,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html"><i class="fa fa-check"></i>Exercise 5: ggplot</a>
 <ul>
-<li class="chapter" data-level="7.8" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-1-4"><i class="fa fa-check"></i><b>7.8</b> Task 1</a></li>
-<li class="chapter" data-level="7.9" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-2-4"><i class="fa fa-check"></i><b>7.9</b> Task 2</a></li>
-<li class="chapter" data-level="7.10" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-3-4"><i class="fa fa-check"></i><b>7.10</b> Task 3</a></li>
-<li class="chapter" data-level="7.11" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-4-2"><i class="fa fa-check"></i><b>7.11</b> Task 4</a></li>
-<li class="chapter" data-level="7.12" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-5-2"><i class="fa fa-check"></i><b>7.12</b> Task 5</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-1-4"><i class="fa fa-check"></i>Task 1</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-2-4"><i class="fa fa-check"></i>Task 2</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-3-4"><i class="fa fa-check"></i>Task 3</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-4-2"><i class="fa fa-check"></i>Task 4</a></li>
+<li class="chapter" data-level="" data-path="exercise-5-ggplot.html"><a href="exercise-5-ggplot.html#task-5-2"><i class="fa fa-check"></i>Task 5</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="tutorial-data-analysis-with-tidycomm.html"><a href="tutorial-data-analysis-with-tidycomm.html"><i class="fa fa-check"></i><b>8</b> Tutorial: Data analysis with tidycomm</a>
 <ul>
@@ -497,9 +497,9 @@ started.</p>
 <p>Firstly, you’ll need to install the <code>rmarkdown</code> package and its
 dependencies, including <code>knitr</code> for executing code chunks. You can do
 this from within R or RStudio:</p>
-<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="tutorial-introduction-to-r-markdown.html#cb409-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rmarkdown&quot;</span>)</span>
-<span id="cb409-2"><a href="tutorial-introduction-to-r-markdown.html#cb409-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;knitr&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="tutorial-introduction-to-r-markdown.html#cb410-1" tabindex="-1"></a><span class="fu">library</span>(rmarkdown)</span></code></pre></div>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="tutorial-introduction-to-r-markdown.html#cb406-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;rmarkdown&quot;</span>)</span>
+<span id="cb406-2"><a href="tutorial-introduction-to-r-markdown.html#cb406-2" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;knitr&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="tutorial-introduction-to-r-markdown.html#cb407-1" tabindex="-1"></a><span class="fu">library</span>(rmarkdown)</span></code></pre></div>
 </div>
 <div id="creating-a-new-r-markdown-file" class="section level3 hasAnchor" number="9.0.2">
 <h3><span class="header-section-number">9.0.2</span> Creating a new R Markdown file<a href="tutorial-introduction-to-r-markdown.html#creating-a-new-r-markdown-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -531,7 +531,7 @@ description of the WoJ dataset would be included in the final document.</p>
 need to ‘render’ it. You can do this in RStudio by clicking the ‘Knit’
 button. You can also use the <code>render()</code> function from the rmarkdown
 package:</p>
-<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="tutorial-introduction-to-r-markdown.html#cb411-1" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">render</span>(<span class="st">&quot;my_document.Rmd&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="tutorial-introduction-to-r-markdown.html#cb408-1" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">render</span>(<span class="st">&quot;my_document.Rmd&quot;</span>)</span></code></pre></div>
 <p>This will execute all of the R code chunks, convert the markdown text to
 formatted text, and combine everything into a final document.</p>
 </div>
@@ -614,7 +614,7 @@ I’ve found is through using the <code>rbbt</code> package <a href="https://dew
 here)</a>.
 However, it’s not hosted on <code>CRAN</code>, so be careful. This package might
 not run stable in the future.</p>
-<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="tutorial-introduction-to-r-markdown.html#cb412-1" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;paleolimbot/rbbt&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="tutorial-introduction-to-r-markdown.html#cb409-1" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;paleolimbot/rbbt&quot;</span>)</span></code></pre></div>
 <p>After installing <code>rbbt</code> and restarting RStudio, go to
 <code>Tools &gt; Modify Keyboard Shortcuts</code>. Search for <code>zotero</code> and click on
 the ‘Shortcut’ field for the ‘Insert Zotero Bibliography from Zotero
