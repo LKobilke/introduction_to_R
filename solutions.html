@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Solutions | Continuing education: R</title>
   <meta name="description" content="Solutions | Continuing education: R - Seminar at the IfKW, WiSe 2023/24" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Solutions | Continuing education: R" />
   <meta property="og:type" content="book" />
@@ -1136,16 +1136,15 @@ divides the cars in three groups: light, medium, and heavy cars.</p>
 <h3>Task 7<a href="solutions.html#task-7-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Make a scatter plot to indicate how many km per liter (<em>mpg</em>) a car can
 drive depending on its weight (<em>wt</em>). Facet the plot by weight class
-(<em>wt_cat</em>). Try to hide the plot legend with <code>+ theme(legend.position = "none")</code>.</p>
+(<em>wt_cat</em>).</p>
 <p><em>Solution:</em></p>
 <div class="sourceCode" id="cb518"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb518-1"><a href="solutions.html#cb518-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
 <span id="cb518-2"><a href="solutions.html#cb518-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">wt_cat =</span> <span class="fu">factor</span>(wt_cat, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;light car&quot;</span>, <span class="st">&quot;medium car&quot;</span>, <span class="st">&quot;heavy car&quot;</span>))) <span class="sc">%&gt;%</span></span>
 <span id="cb518-3"><a href="solutions.html#cb518-3" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
 <span id="cb518-4"><a href="solutions.html#cb518-4" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb518-5"><a href="solutions.html#cb518-5" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb518-6"><a href="solutions.html#cb518-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
-<span id="cb518-7"><a href="solutions.html#cb518-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relationship between car weight and</span><span class="sc">\n</span><span class="st"> achieved kilometers per liter&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Weight in 1000kg&quot;</span>, <span class="at">y =</span> <span class="st">&quot;km/l&quot;</span>) <span class="sc">+</span></span>
-<span id="cb518-8"><a href="solutions.html#cb518-8" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>wt_cat)</span></code></pre></div>
+<span id="cb518-6"><a href="solutions.html#cb518-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relationship between car weight and achieved kilometers per liter&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Weight in 1000kg&quot;</span>, <span class="at">y =</span> <span class="st">&quot;km/l&quot;</span>) <span class="sc">+</span></span>
+<span id="cb518-7"><a href="solutions.html#cb518-7" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>wt_cat)</span></code></pre></div>
 <p><img src="Intro-to-R_files/figure-html/unnamed-chunk-323-1.png" width="672" /></p>
 <p>Alternatively, you can use <code>tidycomm</code>:</p>
 <div class="sourceCode" id="cb519"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb519-1"><a href="solutions.html#cb519-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
@@ -1169,7 +1168,7 @@ between 1.4613636 and 1.5636364 *1000kg from it.</p>
 <span id="cb520-5"><a href="solutions.html#cb520-5" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb520-6"><a href="solutions.html#cb520-6" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb520-7"><a href="solutions.html#cb520-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
-<span id="cb520-8"><a href="solutions.html#cb520-8" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relationship between car weight and</span><span class="sc">\n</span><span class="st"> achieved kilometers per liter&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Weight in 1000kg&quot;</span>, <span class="at">y =</span> <span class="st">&quot;km/l&quot;</span>) <span class="sc">+</span></span>
+<span id="cb520-8"><a href="solutions.html#cb520-8" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relationship between car weight and achieved kilometers per liter&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Weight in 1000kg&quot;</span>, <span class="at">y =</span> <span class="st">&quot;km/l&quot;</span>) <span class="sc">+</span></span>
 <span id="cb520-9"><a href="solutions.html#cb520-9" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>wt_cat)</span></code></pre></div>
 <p><img src="Intro-to-R_files/figure-html/unnamed-chunk-325-1.png" width="672" /></p>
 <p>With <code>tidycomm</code>:</p>
@@ -1178,7 +1177,7 @@ between 1.4613636 and 1.5636364 *1000kg from it.</p>
 <span id="cb521-3"><a href="solutions.html#cb521-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">wt_cat =</span> <span class="fu">factor</span>(wt_cat, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;light car&quot;</span>, <span class="st">&quot;medium car&quot;</span>, <span class="st">&quot;heavy car&quot;</span>))) <span class="sc">%&gt;%</span></span>
 <span id="cb521-4"><a href="solutions.html#cb521-4" tabindex="-1"></a>  tidycomm<span class="sc">::</span><span class="fu">correlate</span>(wt, mpg) <span class="sc">%&gt;%</span></span>
 <span id="cb521-5"><a href="solutions.html#cb521-5" tabindex="-1"></a>  tidycomm<span class="sc">::</span><span class="fu">visualize</span>() <span class="sc">+</span></span>
-<span id="cb521-6"><a href="solutions.html#cb521-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relationship between car weight and</span><span class="sc">\n</span><span class="st"> achieved kilometers per liter&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Weight in 1000kg&quot;</span>, <span class="at">y =</span> <span class="st">&quot;km/l&quot;</span>) <span class="sc">+</span></span>
+<span id="cb521-6"><a href="solutions.html#cb521-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Relationship between car weight and achieved kilometers per liter&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Weight in 1000kg&quot;</span>, <span class="at">y =</span> <span class="st">&quot;km/l&quot;</span>) <span class="sc">+</span></span>
 <span id="cb521-7"><a href="solutions.html#cb521-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb521-8"><a href="solutions.html#cb521-8" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>wt_cat)</span></code></pre></div>
 <p><img src="Intro-to-R_files/figure-html/unnamed-chunk-326-1.png" width="672" /></p>
