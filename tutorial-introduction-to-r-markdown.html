@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title> 9 Tutorial: Introduction to R Markdown | Continuing education: R</title>
   <meta name="description" content=" 9 Tutorial: Introduction to R Markdown | Continuing education: R - Seminar at the IfKW, WiSe 2023/24" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content=" 9 Tutorial: Introduction to R Markdown | Continuing education: R" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Lara Kobilke, IfKW, Ludwig-Maximilians-Universität München" />
 
 
-<meta name="date" content="2023-10-13" />
+<meta name="date" content="2024-02-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -489,11 +489,11 @@ started.</p>
 <p>Firstly, you’ll need to install the <code>rmarkdown</code> package and its
 dependencies, including <code>knitr</code> for executing code chunks. You can do
 this from within R or RStudio:</p>
-<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="tutorial-introduction-to-r-markdown.html#cb406-1" tabindex="-1"></a><span class="co"># install.packages(&quot;rmarkdown&quot;) # run only the first time</span></span>
-<span id="cb406-2"><a href="tutorial-introduction-to-r-markdown.html#cb406-2" tabindex="-1"></a><span class="co"># install.packages(&quot;knitr&quot;) # run only the first time</span></span></code></pre></div>
-<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="tutorial-introduction-to-r-markdown.html#cb407-1" tabindex="-1"></a><span class="fu">library</span>(rmarkdown)</span></code></pre></div>
+<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="tutorial-introduction-to-r-markdown.html#cb417-1" tabindex="-1"></a><span class="co"># install.packages(&quot;rmarkdown&quot;) # run only the first time</span></span>
+<span id="cb417-2"><a href="tutorial-introduction-to-r-markdown.html#cb417-2" tabindex="-1"></a><span class="co"># install.packages(&quot;knitr&quot;) # run only the first time</span></span></code></pre></div>
+<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="tutorial-introduction-to-r-markdown.html#cb418-1" tabindex="-1"></a><span class="fu">library</span>(rmarkdown)</span></code></pre></div>
 <p>In addition, you’ll need a LaTeX installation on your PC / Mac. Some of you might already have installed LaTeX, such as in MiKTeX on Windows. If you don’t, please install <code>tinytex</code> in R:</p>
-<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="tutorial-introduction-to-r-markdown.html#cb408-1" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="tutorial-introduction-to-r-markdown.html#cb419-1" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div>
 <p>We are all clear. Let’s get started!</p>
 </div>
 <div id="creating-a-new-r-markdown-file" class="section level2 hasAnchor" number="9.2">
@@ -531,7 +531,7 @@ enclosing it in <code>```{r} ```</code>.</p></li>
 <td align="left"><em>How to knit (i.e., render) an RMarkdown document</em></td>
 </tr>
 <tr class="even">
-<td align="left"><img src="images/knit.png" /></td>
+<td align="left"><img src="C:/Users/LaraK/LRZ%20Sync+Share/Arbeit_aktuell/Mittelbaufortbildung_Blockkurs/LaraKobilke/images/knit.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -546,12 +546,12 @@ enclosing it in <code>```{r} ```</code>.</p></li>
 <td align="left"><em>How to know when the knitting process is finished: Keep an eye on the stop sign</em></td>
 </tr>
 <tr class="even">
-<td align="left"><img src="images/stop_sign.png" /></td>
+<td align="left"><img src="C:/Users/LaraK/LRZ%20Sync+Share/Arbeit_aktuell/Mittelbaufortbildung_Blockkurs/LaraKobilke/images/stop_sign.png" /></td>
 </tr>
 </tbody>
 </table>
 <p>If you don’t like to use the <code>knit</code> button, you can also use the <code>render()</code> function from the rmarkdown package to render / knit your document:</p>
-<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="tutorial-introduction-to-r-markdown.html#cb409-1" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">render</span>(<span class="st">&quot;my_rmarkdown_document.Rmd&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb420"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb420-1"><a href="tutorial-introduction-to-r-markdown.html#cb420-1" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">render</span>(<span class="st">&quot;my_rmarkdown_document.Rmd&quot;</span>)</span></code></pre></div>
 <p>This will execute all of the R code chunks, convert the markdown text to formatted text, and combine everything into a final PDF document that is saved to your working directory.</p>
 </div>
 <div id="formatting-the-document" class="section level2 hasAnchor" number="9.5">
@@ -602,7 +602,7 @@ follow the system setup.</p>
 <td align="left"><em>How to pin BibTex keys in Zotero:</em></td>
 </tr>
 <tr class="even">
-<td align="left"><img src="images/pin_betterBibtex.png" /></td>
+<td align="left"><img src="C:/Users/LaraK/LRZ%20Sync+Share/Arbeit_aktuell/Mittelbaufortbildung_Blockkurs/LaraKobilke/images/pin_betterBibtex.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -611,7 +611,7 @@ I’ve found is through using the <code>rbbt</code> package <a href="https://dew
 here)</a>.
 However, it’s not hosted on <code>CRAN</code>, so be careful. This package might
 not run stable in the future.</p>
-<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="tutorial-introduction-to-r-markdown.html#cb410-1" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;paleolimbot/rbbt&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="tutorial-introduction-to-r-markdown.html#cb421-1" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;paleolimbot/rbbt&quot;</span>)</span></code></pre></div>
 <p>After installing <code>rbbt</code> and restarting RStudio, go to
 <code>Tools &gt; Modify Keyboard Shortcuts</code>. Search for <code>zotero</code> and click on
 the ‘Shortcut’ field for the ‘Insert Zotero Bibliography from Zotero
@@ -626,7 +626,7 @@ Selection’ line and type in your desired shortcut keys, e.g.
 <td align="left"><em>How to modify your Zotero BibTex Shortcuts in RStudio:</em></td>
 </tr>
 <tr class="even">
-<td align="left"><img src="images/modify_keyboard_shortcuts.PNG" /></td>
+<td align="left"><img src="C:/Users/LaraK/LRZ%20Sync+Share/Arbeit_aktuell/Mittelbaufortbildung_Blockkurs/LaraKobilke/images/modify_keyboard_shortcuts.PNG" /></td>
 </tr>
 </tbody>
 </table>
@@ -658,7 +658,7 @@ file.</p>
 <td align="left"><em>Citekeys in RMarkdown:</em></td>
 </tr>
 <tr class="even">
-<td align="left"><img src="images/cite.png" /></td>
+<td align="left"><img src="C:/Users/LaraK/LRZ%20Sync+Share/Arbeit_aktuell/Mittelbaufortbildung_Blockkurs/LaraKobilke/images/cite.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -680,7 +680,7 @@ Markdown</a>.</p>
 <td align="left"><em>Clear your Rmd script:</em></td>
 </tr>
 <tr class="even">
-<td align="left"><img src="images/rmarkdown_document_empty.png" /></td>
+<td align="left"><img src="C:/Users/LaraK/LRZ%20Sync+Share/Arbeit_aktuell/Mittelbaufortbildung_Blockkurs/LaraKobilke/images/rmarkdown_document_empty.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -689,8 +689,8 @@ Markdown</a>.</p>
 <li><strong>Update your YAML header with APA7 information:</strong>
 Install and load the <code>papaja</code> package, which allows to create APA7-styled papers:</li>
 </ol>
-<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="tutorial-introduction-to-r-markdown.html#cb411-1" tabindex="-1"></a><span class="co"># install.packages(&quot;papaja&quot;) # run only the first time</span></span>
-<span id="cb411-2"><a href="tutorial-introduction-to-r-markdown.html#cb411-2" tabindex="-1"></a><span class="fu">library</span>(papaja)</span></code></pre></div>
+<div class="sourceCode" id="cb422"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb422-1"><a href="tutorial-introduction-to-r-markdown.html#cb422-1" tabindex="-1"></a><span class="co"># install.packages(&quot;papaja&quot;) # run only the first time</span></span>
+<span id="cb422-2"><a href="tutorial-introduction-to-r-markdown.html#cb422-2" tabindex="-1"></a><span class="fu">library</span>(papaja)</span></code></pre></div>
 <p>If you want to use the most recent (development!) version of <code>papaja</code> that supports APA7, follow this <a href="https://www.martinasladek.co.uk/content/blog/2022_feb_how-to-set-up-papaja-to-work-with-apa-7-format.html">tutorial</a> and install from GitHub: <code>remotes::install_github("crsh/papaja@devel")</code></p>
 <p>Next, copy and paste this new YAML header into your Rmd file:</p>
 <pre class="---"><code>title             : &quot;The title of your paper&quot;
@@ -730,7 +730,7 @@ output:
 <td align="left"><em>Set up a APA7 YAML header in Rmd:</em></td>
 </tr>
 <tr class="even">
-<td align="left"><img src="images/yaml_header.png" /></td>
+<td align="left"><img src="C:/Users/LaraK/LRZ%20Sync+Share/Arbeit_aktuell/Mittelbaufortbildung_Blockkurs/LaraKobilke/images/yaml_header.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -738,9 +738,9 @@ output:
 <li><strong>Load libraries:</strong>
 It’s customary to start your script by loading the required libraries. These are be some of the libraries that you might like to use:</li>
 </ol>
-<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="tutorial-introduction-to-r-markdown.html#cb413-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb413-2"><a href="tutorial-introduction-to-r-markdown.html#cb413-2" tabindex="-1"></a><span class="fu">library</span>(tidycomm)</span>
-<span id="cb413-3"><a href="tutorial-introduction-to-r-markdown.html#cb413-3" tabindex="-1"></a><span class="fu">library</span>(rstudioapi)</span></code></pre></div>
+<div class="sourceCode" id="cb424"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb424-1"><a href="tutorial-introduction-to-r-markdown.html#cb424-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb424-2"><a href="tutorial-introduction-to-r-markdown.html#cb424-2" tabindex="-1"></a><span class="fu">library</span>(tidycomm)</span>
+<span id="cb424-3"><a href="tutorial-introduction-to-r-markdown.html#cb424-3" tabindex="-1"></a><span class="fu">library</span>(rstudioapi)</span></code></pre></div>
 <p>This is what your Rmd document should look like:</p>
 <table>
 <colgroup>
@@ -751,7 +751,7 @@ It’s customary to start your script by loading the required libraries. These a
 <td align="left"><em>Set up your libraries in Rmd:</em></td>
 </tr>
 <tr class="even">
-<td align="left"><img src="images/load_libraries.png" /></td>
+<td align="left"><img src="C:/Users/LaraK/LRZ%20Sync+Share/Arbeit_aktuell/Mittelbaufortbildung_Blockkurs/LaraKobilke/images/load_libraries.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -759,18 +759,18 @@ It’s customary to start your script by loading the required libraries. These a
 <li><strong>Setting global options</strong>
 At times, you’ll want to establish certain options that apply throughout your R(md) file. You’ve already learned about these options in the tutorial: <a href="tutorial-installing-understanding-rr-studio.html#optional-setting-global-options-in-r-for-a-customized-workflow">Optional: Setting global options in R for a customized workflow</a>.</li>
 </ol>
-<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="tutorial-introduction-to-r-markdown.html#cb414-1" tabindex="-1"></a><span class="co"># Set global options for the display of output &amp; calculations</span></span>
-<span id="cb414-2"><a href="tutorial-introduction-to-r-markdown.html#cb414-2" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>) <span class="co"># turns off scientific notation</span></span>
-<span id="cb414-3"><a href="tutorial-introduction-to-r-markdown.html#cb414-3" tabindex="-1"></a><span class="fu">options</span>(<span class="at">pillar.sigfig =</span> <span class="dv">2</span>) <span class="co"># desired number of decimal points in tibbles</span></span></code></pre></div>
+<div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="tutorial-introduction-to-r-markdown.html#cb425-1" tabindex="-1"></a><span class="co"># Set global options for the display of output &amp; calculations</span></span>
+<span id="cb425-2"><a href="tutorial-introduction-to-r-markdown.html#cb425-2" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>) <span class="co"># turns off scientific notation</span></span>
+<span id="cb425-3"><a href="tutorial-introduction-to-r-markdown.html#cb425-3" tabindex="-1"></a><span class="fu">options</span>(<span class="at">pillar.sigfig =</span> <span class="dv">2</span>) <span class="co"># desired number of decimal points in tibbles</span></span></code></pre></div>
 <p>In addition to setting these global options for displaying output in tibbles, you may also want to control how your code chunks render in the PDF. For example, you might wish to set the size of figures that appear in your rendered document:</p>
-<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="tutorial-introduction-to-r-markdown.html#cb415-1" tabindex="-1"></a><span class="co"># Set options for rendering code chunks</span></span>
-<span id="cb415-2"><a href="tutorial-introduction-to-r-markdown.html#cb415-2" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
-<span id="cb415-3"><a href="tutorial-introduction-to-r-markdown.html#cb415-3" tabindex="-1"></a>  <span class="at">echo =</span> <span class="cn">TRUE</span>,         <span class="co"># show code in output, this is usually turned off when you hand in your publications for review</span></span>
-<span id="cb415-4"><a href="tutorial-introduction-to-r-markdown.html#cb415-4" tabindex="-1"></a>  <span class="at">message =</span> <span class="cn">FALSE</span>,     <span class="co"># suppress messages (the smaller siblings of warnings that give you additional information on your console output)</span></span>
-<span id="cb415-5"><a href="tutorial-introduction-to-r-markdown.html#cb415-5" tabindex="-1"></a>  <span class="at">warning =</span> <span class="cn">FALSE</span>,     <span class="co"># suppress all warnings</span></span>
-<span id="cb415-6"><a href="tutorial-introduction-to-r-markdown.html#cb415-6" tabindex="-1"></a>  <span class="at">fig.width =</span> <span class="dv">6</span>,       <span class="co"># figure width in inch</span></span>
-<span id="cb415-7"><a href="tutorial-introduction-to-r-markdown.html#cb415-7" tabindex="-1"></a>  <span class="at">fig.height =</span> <span class="dv">4</span>       <span class="co"># figure height in inch</span></span>
-<span id="cb415-8"><a href="tutorial-introduction-to-r-markdown.html#cb415-8" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="tutorial-introduction-to-r-markdown.html#cb426-1" tabindex="-1"></a><span class="co"># Set options for rendering code chunks</span></span>
+<span id="cb426-2"><a href="tutorial-introduction-to-r-markdown.html#cb426-2" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb426-3"><a href="tutorial-introduction-to-r-markdown.html#cb426-3" tabindex="-1"></a>  <span class="at">echo =</span> <span class="cn">TRUE</span>,         <span class="co"># show code in output, this is usually turned off when you hand in your publications for review</span></span>
+<span id="cb426-4"><a href="tutorial-introduction-to-r-markdown.html#cb426-4" tabindex="-1"></a>  <span class="at">message =</span> <span class="cn">FALSE</span>,     <span class="co"># suppress messages (the smaller siblings of warnings that give you additional information on your console output)</span></span>
+<span id="cb426-5"><a href="tutorial-introduction-to-r-markdown.html#cb426-5" tabindex="-1"></a>  <span class="at">warning =</span> <span class="cn">FALSE</span>,     <span class="co"># suppress all warnings</span></span>
+<span id="cb426-6"><a href="tutorial-introduction-to-r-markdown.html#cb426-6" tabindex="-1"></a>  <span class="at">fig.width =</span> <span class="dv">6</span>,       <span class="co"># figure width in inch</span></span>
+<span id="cb426-7"><a href="tutorial-introduction-to-r-markdown.html#cb426-7" tabindex="-1"></a>  <span class="at">fig.height =</span> <span class="dv">4</span>       <span class="co"># figure height in inch</span></span>
+<span id="cb426-8"><a href="tutorial-introduction-to-r-markdown.html#cb426-8" tabindex="-1"></a>  )</span></code></pre></div>
 <p>This is what your Rmd document should look like:</p>
 <table>
 <colgroup>
@@ -781,7 +781,7 @@ At times, you’ll want to establish certain options that apply throughout your 
 <td align="left"><em>Set up your options in Rmd:</em></td>
 </tr>
 <tr class="even">
-<td align="left"><img src="images/set_options.png" /></td>
+<td align="left"><img src="C:/Users/LaraK/LRZ%20Sync+Share/Arbeit_aktuell/Mittelbaufortbildung_Blockkurs/LaraKobilke/images/set_options.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -789,8 +789,8 @@ At times, you’ll want to establish certain options that apply throughout your 
 <li><strong>Setting the working directory</strong>
 Next, set your working directory with soft coding:</li>
 </ol>
-<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb416-1"><a href="tutorial-introduction-to-r-markdown.html#cb416-1" tabindex="-1"></a><span class="co"># Set working directory</span></span>
-<span id="cb416-2"><a href="tutorial-introduction-to-r-markdown.html#cb416-2" tabindex="-1"></a><span class="fu">setwd</span>(<span class="fu">dirname</span>(rstudioapi<span class="sc">::</span><span class="fu">getSourceEditorContext</span>()<span class="sc">$</span>path))</span></code></pre></div>
+<div class="sourceCode" id="cb427"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb427-1"><a href="tutorial-introduction-to-r-markdown.html#cb427-1" tabindex="-1"></a><span class="co"># Set working directory</span></span>
+<span id="cb427-2"><a href="tutorial-introduction-to-r-markdown.html#cb427-2" tabindex="-1"></a><span class="fu">setwd</span>(<span class="fu">dirname</span>(rstudioapi<span class="sc">::</span><span class="fu">getSourceEditorContext</span>()<span class="sc">$</span>path))</span></code></pre></div>
 <p>This is what your Rmd document should look like:</p>
 <table>
 <colgroup>
@@ -801,7 +801,7 @@ Next, set your working directory with soft coding:</li>
 <td align="left"><em>Set up your working directory in Rmd:</em></td>
 </tr>
 <tr class="even">
-<td align="left"><img src="images/set_wd.png" /></td>
+<td align="left"><img src="C:/Users/LaraK/LRZ%20Sync+Share/Arbeit_aktuell/Mittelbaufortbildung_Blockkurs/LaraKobilke/images/set_wd.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -809,8 +809,8 @@ Next, set your working directory with soft coding:</li>
 <li><strong>Load data:</strong>
 Now, you’ll load your data from your working directory.</li>
 </ol>
-<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="tutorial-introduction-to-r-markdown.html#cb417-1" tabindex="-1"></a><span class="co"># Load data</span></span>
-<span id="cb417-2"><a href="tutorial-introduction-to-r-markdown.html#cb417-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;WoJ_names.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="tutorial-introduction-to-r-markdown.html#cb428-1" tabindex="-1"></a><span class="co"># Load data</span></span>
+<span id="cb428-2"><a href="tutorial-introduction-to-r-markdown.html#cb428-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;WoJ_names.csv&quot;</span>, <span class="at">header =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>This is what your Rmd document should look like:</p>
 <table>
 <colgroup>
@@ -821,7 +821,7 @@ Now, you’ll load your data from your working directory.</li>
 <td align="left"><em>Load data in Rmd:</em></td>
 </tr>
 <tr class="even">
-<td align="left"><img src="images/load_data.png" /></td>
+<td align="left"><img src="C:/Users/LaraK/LRZ%20Sync+Share/Arbeit_aktuell/Mittelbaufortbildung_Blockkurs/LaraKobilke/images/load_data.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -872,7 +872,7 @@ Now you only need to render this document to see the results. Or hit the green p
 <td align="left"><em>Write content in Rmd:</em></td>
 </tr>
 <tr class="even">
-<td align="left"><img src="images/text_rmd.png" /></td>
+<td align="left"><img src="C:/Users/LaraK/LRZ%20Sync+Share/Arbeit_aktuell/Mittelbaufortbildung_Blockkurs/LaraKobilke/images/text_rmd.png" /></td>
 </tr>
 </tbody>
 </table>

@@ -160,3 +160,7 @@ center_scale
 z_scale
 tutorial-data-management-with-dplyr
 basic-setup-of-an-rmd-script
+setna_scale
+recode_cat_scale
+categorize_scale
+dummify_scale

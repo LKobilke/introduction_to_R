@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Exercise 6: dplyr, ggplot, tidycomm | Continuing education: R</title>
   <meta name="description" content="Exercise 6: dplyr, ggplot, tidycomm | Continuing education: R - Seminar at the IfKW, WiSe 2023/24" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Exercise 6: dplyr, ggplot, tidycomm | Continuing education: R" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Lara Kobilke, IfKW, Ludwig-Maximilians-Universität München" />
 
 
-<meta name="date" content="2023-10-13" />
+<meta name="date" content="2024-02-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -475,19 +475,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>alternatively, you’ll have repeatedsome helpful function from <code>tidycomm</code></li>
 </ul>
 <p>In this exercise, we will work with the <code>mtcars</code> data that comes pre-installed with <code>dplyr</code>.</p>
-<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb404-2"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-2" tabindex="-1"></a></span>
-<span id="cb404-3"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-3" tabindex="-1"></a>data <span class="ot">&lt;-</span> mtcars</span>
-<span id="cb404-4"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-4" tabindex="-1"></a></span>
-<span id="cb404-5"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-5" tabindex="-1"></a><span class="co"># To make the data somewhat more interesting, let&#39;s set a few values to missing values (you don&#39;t need to know this code):</span></span>
-<span id="cb404-6"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-6" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb404-7"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-7" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">wt =</span> <span class="fu">na_if</span>(wt, <span class="fl">4.070</span>))</span>
-<span id="cb404-8"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-8" tabindex="-1"></a></span>
-<span id="cb404-9"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-9" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb404-10"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb404-10" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mpg =</span> <span class="fu">na_if</span>(mpg, <span class="fl">22.8</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb415-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb415-2"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb415-2" tabindex="-1"></a></span>
+<span id="cb415-3"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb415-3" tabindex="-1"></a>data <span class="ot">&lt;-</span> mtcars</span>
+<span id="cb415-4"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb415-4" tabindex="-1"></a></span>
+<span id="cb415-5"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb415-5" tabindex="-1"></a><span class="co"># To make the data somewhat more interesting, let&#39;s set a few values to missing values (you don&#39;t need to know this code):</span></span>
+<span id="cb415-6"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb415-6" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb415-7"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb415-7" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">wt =</span> <span class="fu">na_if</span>(wt, <span class="fl">4.070</span>))</span>
+<span id="cb415-8"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb415-8" tabindex="-1"></a></span>
+<span id="cb415-9"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb415-9" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb415-10"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb415-10" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mpg =</span> <span class="fu">na_if</span>(mpg, <span class="fl">22.8</span>))</span></code></pre></div>
 <p>Let’s first get to know this data. We can get some information about the variables that are included in the dataset by using <code>R</code>s <code>help()</code>
 function:</p>
-<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb405-1" tabindex="-1"></a><span class="fu">help</span>(mtcars)</span></code></pre></div>
+<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb416-1"><a href="exercise-6-dplyr-ggplot-tidycomm.html#cb416-1" tabindex="-1"></a><span class="fu">help</span>(mtcars)</span></code></pre></div>
 <table>
 <colgroup>
 <col width="100%" />
@@ -497,7 +497,7 @@ function:</p>
 <td align="left"><em>Image: Output of the help(mtcars) function:</em></td>
 </tr>
 <tr class="even">
-<td align="left"><img src="images/mtcars.JPG" style="width:30.0%" /></td>
+<td align="left"><img src="C:/Users/LaraK/LRZ%20Sync+Share/Arbeit_aktuell/Mittelbaufortbildung_Blockkurs/LaraKobilke/images/mtcars.JPG" style="width:30.0%" /></td>
 </tr>
 </tbody>
 </table>
